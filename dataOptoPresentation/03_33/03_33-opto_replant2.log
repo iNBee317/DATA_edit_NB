@@ -1,0 +1,71 @@
+Scenario - opto_replant
+Logfile written - 12/12/2014 12:17:18
+
+Subject	Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
+
+03_33	1	Picture	begin	332	0	2	88313	3	0	next	other	0
+03_33	1	Response	9	88451	88119	2
+03_33	2	Picture	loadClose	88645	0	1	131302	3	0	next	other	0
+03_33	2	Response	6	109730	21085	2
+03_33	2	Response	5	110250	21605	2
+03_33	2	Response	9	219827	131182	1
+03_33	3	Picture	view	219947	0	2	9498	3	0	next	other	0
+03_33	3	Response	8	229216	9269	2
+03_33	4	Picture	move	229445	0	1	50155	2	0	next	other	0
+03_33	4	Response	2	278847	49402	1
+03_33	5	Picture	loadClose	279600	0	1	402738	2	0	next	other	0
+03_33	5	Response	6	284215	4615	1
+03_33	5	Response	9	682203	402603	1
+03_33	6	Picture	view	682338	0	1	6832	2	0	next	other	0
+03_33	6	Response	8	689003	6665	1
+03_33	7	Picture	move	689170	0	1	50155	2	0	next	other	0
+03_33	8	Picture	check	739325	0	1	4644	190	0	next	other	0
+03_33	8	Response	6	743121	3796	2
+03_33	8	Response	2	743953	4628	1
+03_33	9	Picture	loadClose	743969	0	189	249963	190	0	next	other	0
+03_33	9	Response	9	993843	249874	2
+03_33	10	Picture	view	993932	0	1	7998	2	0	next	other	0
+03_33	10	Response	8	1001743	7811	2
+03_33	11	Picture	move	1001930	0	1	43097	228	0	next	other	0
+03_33	11	Response	2	1035784	33854	1
+03_33	11	Response	6	1044982	43052	2
+03_33	12	Picture	loadClose	1045027	0	227	116531	229	0	next	other	0
+03_33	12	Response	9	1161448	116421	2
+03_33	13	Picture	view	1161558	0	2	10332	3	0	next	other	0
+03_33	13	Response	8	1171728	10170	2
+03_33	14	Picture	move	1171890	0	1	47129	195	0	next	other	0
+03_33	14	Response	2	1218498	46608	1
+03_33	14	Response	6	1218977	47087	2
+03_33	15	Picture	loadClose	1219019	0	194	67177	195	0	next	other	0
+03_33	15	Response	9	1286135	67116	1
+03_33	16	Picture	view	1286196	0	1	8498	2	0	next	other	0
+03_33	16	Response	8	1294574	8378	2
+03_33	17	Picture	move	1294694	0	1	47156	2	0	next	other	0
+03_33	17	Response	6	1341673	46979	2
+03_33	18	Picture	check	1341850	0	1	12980	185	0	next	other	0
+03_33	18	Response	2	1354814	12964	1
+03_33	19	Picture	loadClose	1354830	0	184	281463	185	0	next	other	0
+03_33	19	Quit		1635766	280936
+
+
+Event Type	Code	Type	Response	RT	RT Uncertainty	Time	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur
+
+Picture	begin	other				332	2	88313	3	0	next
+Picture	loadClose	other				88645	1	131302	3	0	next
+Picture	view	other				219947	2	9498	3	0	next
+Picture	move	other				229445	1	50155	2	0	next
+Picture	loadClose	other				279600	1	402738	2	0	next
+Picture	view	other				682338	1	6832	2	0	next
+Picture	move	other				689170	1	50155	2	0	next
+Picture	check	other				739325	1	4644	190	0	next
+Picture	loadClose	other				743969	189	249963	190	0	next
+Picture	view	other				993932	1	7998	2	0	next
+Picture	move	other				1001930	1	43097	228	0	next
+Picture	loadClose	other				1045027	227	116531	229	0	next
+Picture	view	other				1161558	2	10332	3	0	next
+Picture	move	other				1171890	1	47129	195	0	next
+Picture	loadClose	other				1219019	194	67177	195	0	next
+Picture	view	other				1286196	1	8498	2	0	next
+Picture	move	other				1294694	1	47156	2	0	next
+Picture	check	other				1341850	1	12980	185	0	next
+Picture	loadClose	other				1354830	184	281463	185	0	next

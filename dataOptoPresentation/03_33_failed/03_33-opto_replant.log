@@ -1,0 +1,19 @@
+Scenario - opto_replant
+Logfile written - 12/12/2014 12:07:31
+
+Subject	Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
+
+03_33	1	Picture	begin	332	0	2	4888515	3	0	next	other	0
+03_33	1	Response	9	4888686	4888354	1
+03_33	2	Picture	loadClose	4888847	0	1	10997	2	0	next	other	0
+03_33	2	Response	9	4899685	10838	2
+03_33	3	Picture	view	4899844	0	1	469141	2	0	next	other	0
+03_33	3	Response	9	5067930	168086	2
+03_33	3	Quit		5368463	468619
+
+
+Event Type	Code	Type	Response	RT	RT Uncertainty	Time	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur
+
+Picture	begin	other				332	2	4888515	3	0	next
+Picture	loadClose	other				4888847	1	10997	2	0	next
+Picture	view	other				4899844	1	469141	2	0	next

@@ -1,0 +1,33 @@
+Scenario - opto_replant
+Logfile written - 10/09/2012 09:28:55
+
+Subject	Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
+
+01_DR	1	Picture	begin	499	0	1	488870	2	0	next	other	0
+01_DR	1	Response	3	331790	331291	1
+01_DR	1	Response	5	338430	337931	1
+01_DR	1	Response	3	341469	340970	2
+01_DR	1	Response	4	342389	341890	2
+01_DR	1	Response	6	360629	360130	1
+01_DR	1	Response	4	361969	361470	1
+01_DR	1	Response	6	363529	363030	1
+01_DR	1	Response	4	392769	392270	1
+01_DR	1	Response	6	470017	469518	1
+01_DR	1	Response	4	470496	469997	2
+01_DR	1	Response	6	478576	478077	2
+01_DR	1	Response	7	489216	488717	1
+01_DR	2	Picture	loadClose	489369	0	1	43655	3	0	next	other	0
+01_DR	2	Response	7	532995	43626	1
+01_DR	3	Picture	view	533024	0	2	169789	3	0	next	other	0
+01_DR	3	Response	4	599254	66230	1
+01_DR	3	Response	6	702631	169607	1
+01_DR	4	Picture	move	702813	0	1	10497	2	0	next	other	0
+01_DR	4	Response	4	713260	10447	2
+01_DR	5	Picture	loadClose	713310	0	1	151793	2	0	next	other	0
+01_DR	5	Response	6	864997	151687	1
+01_DR	6	Picture	wrongHand	865103	0	1	15496	2	0	next	false_alarm	24
+01_DR	6	Response	4	880436	15333	2
+01_DR	7	Picture	loadClose	880599	0	1	67649	2	0	next	other	0
+01_DR	7	Response	6	948175	67576	1
+01_DR	8	Picture	wrongHand	948248	0	1	50937	2	0	next	other	0
+01_DR	8	Quit		998535	50287

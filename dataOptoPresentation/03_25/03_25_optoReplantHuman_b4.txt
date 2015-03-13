@@ -1,0 +1,32 @@
+Subject ID: 03_25
+Date and time: 07/29/2014 13:39:11
+
+Block	Trial	Hand	Cube	Vis	Conf	Pulse	RT	Time
+4	1	left	1	visible	n	1	629	13:39:42
+4	2	left	2	visible	+	Lifted hand (load)
+4	2	left	2	visible	n	2	400	13:40:38
+4	3	left	4	visible	+	3	354	13:40:50
+4	4	left	2	visible	+	4	365	13:41:01
+4	5	left	4	visible	+	5	347	13:41:12
+4	6	left	4	visible	+	6	404	13:41:23
+4	7	left	2	visible	+	7	372	13:41:36
+4	8	left	4	visible	+	8	355	13:41:47
+4	9	left	2	visible	+	9	381	13:41:58
+4	10	left	4	visible	+	10	363	13:42:10
+4	11	left	1	visible	+	11	356	13:42:22
+4	12	left	1	visible	+	12	448	13:42:33
+4	13	left	4	visible	+	13	374	13:42:46
+4	14	left	1	visible	+	14	364	13:42:58
+4	15	left	1	visible	+	15	404	13:43:15
+4	16	left	2	visible	+	16	571	13:43:28
+4	17	left	1	visible	+	17	426	13:43:39
+4	18	left	2	visible	+	18	430	13:43:51
+4	19	left	4	visible	+	19	408	13:44:03
+4	20	left	4	visible	Lifted hand (check)
+4	20	left	4	visible	n	20	412	13:44:14
+4	21	left	2	visible	+	21	373	13:44:25
+4	22	left	1	visible	+	22	351	13:44:36
+4	23	left	1	visible	+	23	369	13:44:49
+4	24	left	2	visible	+	24	484	13:45:01
+4	25	Final check: +
+4	25	left	4	visible	n	25	343	13:45:12

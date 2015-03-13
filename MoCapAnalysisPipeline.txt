@@ -1,0 +1,9 @@
+#MoCap analysis pipeline#
+
+(If running participant 03_25 for example)
+
+You will need these files:
+-the participants raw text file containing all of the cartesian coordinates for each marker. (.../dataOpto/03_25/03_25.txt)
+-the presentation log output file. (.../dataOptoPresentation/03_25?03_25_optoReplant.txt)
+-the codes to translate the presentation log output. (.../Presentation/opto_codes.txt)
+

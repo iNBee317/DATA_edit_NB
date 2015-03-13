@@ -1,0 +1,57 @@
+Subject ID: Demo
+Date and time: 10/09/2014 10:03:55
+
+Block	Trial	Hand	Cube	Vis	Conf	Pulse	RT	Time
+1	1	left	1	visible	n	1	908	10:08:32
+1	2	left	2	visible	+	2	284	10:08:45
+1	3	left	4	visible	+	3	379	10:08:59
+1	4	left	2	visible	+	4	434	10:09:09
+1	5	left	4	visible	+	5	396	10:09:18
+1	6	left	2	visible	+	6	351	10:09:27
+1	7	left	2	visible	+	7	343	10:09:41
+1	8	left	4	visible	+	8	355	10:09:53
+1	9	left	4	visible	+	9	387	10:10:03
+1	10	left	2	visible	+	10	409	10:10:15
+1	11	left	4	visible	+	11	426	10:10:27
+1	12	left	4	visible	-	12	358	10:10:42
+1	13	left	1	visible	+	13	511	10:11:06
+1	14	left	1	visible	+	14	400	10:11:19
+1	15	left	4	visible	+	15	496	10:12:01
+1	16	left	1	visible	+	16	426	10:12:11
+1	17	left	1	visible	+	17	449	10:12:19
+1	18	left	1	visible	+	18	418	10:12:41
+1	19	left	2	visible	+	19	381	10:12:57
+1	20	left	2	visible	+	20	342	10:13:10
+1	21	left	1	visible	+	21	354	10:13:17
+1	22	left	1	visible	+	22	396	10:13:25
+1	23	left	2	visible	+	23	391	10:13:35
+1	24	left	4	visible	+	24	332	10:13:44
+1	25	Final check: +
+1	25	left	4	visible	n	25	398	10:13:54
+2	1	left	2	hidden	n	26	2338	10:17:14
+2	2	left	2	hidden	+	27	736	10:18:11
+2	3	left	1	hidden	+	28	371	10:18:25
+2	4	left	1	hidden	+	29	497	10:18:47
+2	5	left	2	hidden	+	30	476	10:19:17
+2	6	left	2	hidden	+	31	505	10:19:30
+2	7	left	1	hidden	+	32	3149	10:19:45
+2	8	left	2	hidden	-	33	475	10:20:14
+2	9	left	2	hidden	+	34	441	10:20:33
+2	10	left	4	hidden	+	35	464	10:20:49
+2	11	left	4	hidden	+	36	570	10:21:17
+2	12	left	4	hidden	+	37	495	10:21:35
+2	13	left	1	hidden	-	38	439	10:21:48
+2	14	left	4	hidden	+	39	746	10:22:03
+2	15	left	1	hidden	+	40	810	10:22:19
+2	16	left	2	hidden	+	41	590	10:22:34
+2	17	left	2	hidden	+	42	430	10:22:49
+2	18	left	4	hidden	+	43	670	10:23:05
+2	19	left	1	hidden	+	44	437	10:23:27
+2	20	left	4	hidden	+	45	540	10:23:46
+2	21	left	4	hidden	+	46	447	10:23:59
+2	22	left	1	hidden	+	47	504	10:24:13
+2	23	left	4	hidden	+	48	412	10:24:27
+2	24	left	1	hidden	+	49	388	10:24:41
+2	25	left	2	hidden	+	50	388	10:24:53
+2	26	Final check: +
+2	26	left	1	hidden	n	51	560	10:25:05

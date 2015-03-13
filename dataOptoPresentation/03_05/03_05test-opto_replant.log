@@ -1,0 +1,40 @@
+Scenario - opto_replant
+Logfile written - 04/22/2013 13:13:28
+
+Subject	Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
+
+03_05test	1	Picture	begin	499	0	1	86981	2	0	next	other	0
+03_05test	1	Response	1	87345	86846	1
+03_05test	2	Picture	loadClose	87480	0	1	70484	2	0	next	other	0
+03_05test	2	Response	1	157904	70424	1
+03_05test	3	Picture	view	157964	0	1	38158	3	0	next	other	0
+03_05test	3	Response	4	171152	13188	2
+03_05test	3	Response	6	195922	37958	2
+03_05test	4	Picture	move	196122	0	2	43991	3	0	next	other	0
+03_05test	4	Response	4	239931	43809	2
+03_05test	5	Picture	loadClose	240113	0	1	54154	2	0	next	other	0
+03_05test	5	Response	1	294222	54109	1
+03_05test	6	Picture	view	294267	0	1	26661	2	0	next	other	0
+03_05test	6	Response	6	320680	26413	2
+03_05test	7	Picture	move	320928	0	1	11997	3	0	next	other	0
+03_05test	7	Response	4	332830	11902	2
+03_05test	8	Picture	loadClose	332925	0	2	17996	4	0	next	other	0
+03_05test	8	Response	1	350861	17936	1
+03_05test	9	Picture	wait	350921	0	2	40158	3	0	next	other	0
+03_05test	9	Response	6	385489	34568	2
+03_05test	10	Picture	view	391079	0	1	2341	2	0	next	other	0
+03_05test	10	Quit		392621	1542
+
+
+Event Type	Code	Type	Response	RT	RT Uncertainty	Time	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur
+
+Picture	begin	other				499	1	86981	2	0	next
+Picture	loadClose	other				87480	1	70484	2	0	next
+Picture	view	other				157964	1	38158	3	0	next
+Picture	move	other				196122	2	43991	3	0	next
+Picture	loadClose	other				240113	1	54154	2	0	next
+Picture	view	other				294267	1	26661	2	0	next
+Picture	move	other				320928	1	11997	3	0	next
+Picture	loadClose	other				332925	2	17996	4	0	next
+Picture	wait	other				350921	2	40158	3	0	next
+Picture	view	other				391079	1	2341	2	0	next

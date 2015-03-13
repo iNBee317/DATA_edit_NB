@@ -1,0 +1,647 @@
+Scenario - opto_replant
+Logfile written - 08/06/2012 12:56:41
+
+Subject	Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
+
+CS	1	Picture	begin	499	0	1	425707	184	0	next	other	0
+CS	1	Response	3	318865	318366	1
+CS	1	Response	4	318865	318366	1
+CS	1	Response	7	426183	425684	1
+CS	1	Response	7	426203	425704	2
+CS	3	Picture	view	426206	0	183	279109	184	0	next	other	0
+CS	3	Response	6	705197	278991	1
+CS	4	Picture	move	705315	0	1	38656	2	0	next	other	0
+CS	4	Response	4	743886	38571	2
+CS	5	Picture	loadClose	743971	0	1	69149	2	0	next	other	0
+CS	5	Response	7	812955	68984	1
+CS	6	Picture	view	813120	0	1	7498	2	0	next	other	0
+CS	6	Response	6	820475	7355	1
+CS	7	Picture	move	820618	0	1	37290	202	0	next	other	0
+CS	7	Response	4	857894	37276	1
+CS	8	Picture	loadClose	857908	0	201	56519	202	0	next	other	0
+CS	8	Response	7	914293	56385	1
+CS	9	Picture	view	914427	0	1	7831	2	0	next	other	0
+CS	9	Response	6	922073	7646	1
+CS	10	Picture	move	922258	0	1	39989	3	0	next	other	0
+CS	10	Response	4	962122	39864	2
+CS	11	Picture	loadClose	962247	0	2	150794	3	0	next	other	0
+CS	11	Response	7	1112869	150622	1
+CS	12	Picture	view	1113041	0	1	7665	2	0	next	other	0
+CS	12	Response	6	1120549	7508	1
+CS	13	Picture	move	1120706	0	1	39823	2	0	next	other	0
+CS	13	Response	4	1160428	39722	1
+CS	14	Picture	loadClose	1160529	0	1	55485	2	0	next	other	0
+CS	14	Response	7	1215857	55328	1
+CS	14	Response	7	1215877	55348	1
+CS	15	Picture	view	1216014	0	1	8998	2	0	next	other	0
+CS	15	Response	6	1224837	8823	1
+CS	16	Picture	move	1225012	0	1	35491	2	0	next	other	0
+CS	16	Response	4	1260316	35304	2
+CS	17	Picture	loadClose	1260503	0	1	60651	2	0	next	other	0
+CS	17	Response	7	1321115	60612	1
+CS	18	Picture	view	1321154	0	1	8831	2	0	next	other	0
+CS	18	Response	6	1329795	8641	1
+CS	19	Picture	move	1329985	0	1	35657	2	0	next	other	0
+CS	19	Response	4	1365514	35529	1
+CS	20	Picture	loadClose	1365642	0	1	65649	2	0	next	other	0
+CS	20	Response	7	1431173	65531	1
+CS	21	Picture	view	1431291	0	1	8332	2	0	next	other	0
+CS	21	Response	6	1439493	8202	1
+CS	22	Picture	move	1439623	0	1	31627	200	0	next	other	0
+CS	22	Response	4	1471232	31609	1
+CS	23	Picture	loadClose	1471250	0	199	75344	201	0	next	other	0
+CS	23	Response	7	1546481	75231	1
+CS	24	Picture	view	1546594	0	2	7832	3	0	next	other	0
+CS	24	Response	6	1554381	7787	1
+CS	25	Picture	move	1554426	0	1	36953	206	0	next	other	0
+CS	25	Response	4	1591359	36933	2
+CS	26	Picture	loadClose	1591379	0	205	64687	206	0	next	other	0
+CS	26	Response	7	1655948	64569	2
+CS	27	Picture	view	1656066	0	1	6165	2	0	next	other	0
+CS	27	Response	6	1662068	6002	2
+CS	28	Picture	move	1662231	0	1	40156	2	0	next	other	0
+CS	29	Picture	loadClose	1702387	0	1	52486	2	0	next	other	0
+CS	29	Response	4	1706278	3891	1
+CS	29	Response	7	1754857	52470	1
+CS	30	Picture	view	1754873	0	1	7332	2	0	next	other	0
+CS	30	Response	6	1762016	7143	2
+CS	31	Picture	move	1762205	0	1	32290	203	0	next	other	0
+CS	31	Response	4	1794475	32270	2
+CS	32	Picture	loadClose	1794495	0	202	68517	203	0	next	other	0
+CS	32	Response	7	1862954	68459	2
+CS	33	Picture	view	1863012	0	1	8831	2	0	next	other	0
+CS	33	Response	6	1871674	8662	1
+CS	34	Picture	move	1871843	0	1	39323	2	0	next	other	0
+CS	34	Response	4	1911094	39251	1
+CS	35	Picture	loadClose	1911166	0	1	56985	2	0	next	other	0
+CS	35	Response	7	1968042	56876	1
+CS	36	Picture	view	1968151	0	1	7498	2	0	next	other	0
+CS	36	Response	6	1975562	7411	1
+CS	37	Picture	move	1975649	0	1	31942	218	0	next	other	0
+CS	37	Response	4	2007571	31922	2
+CS	38	Picture	loadClose	2007591	0	217	751353	218	0	next	other	0
+CS	38	Response	7	2758826	751235	2
+CS	39	Picture	view	2758944	0	1	7665	2	0	next	other	0
+CS	39	Response	6	2766516	7572	2
+CS	40	Picture	move	2766609	0	1	35990	2	0	next	other	0
+CS	40	Response	4	2802416	35807	1
+CS	41	Picture	loadClose	2802599	0	1	52986	3	0	next	other	0
+CS	41	Response	7	2855464	52865	2
+CS	42	Picture	view	2855585	0	2	8665	3	0	next	other	0
+CS	42	Response	6	2864144	8559	2
+CS	43	Picture	move	2864250	0	1	34491	2	0	next	other	0
+CS	43	Response	4	2898664	34414	1
+CS	44	Picture	loadClose	2898741	0	1	59484	2	0	next	other	0
+CS	44	Response	7	2958213	59472	1
+CS	45	Picture	view	2958225	0	1	7665	2	0	next	other	0
+CS	45	Response	6	2965833	7608	1
+CS	46	Picture	move	2965890	0	1	40156	2	0	next	other	0
+CS	47	Picture	loadClose	3006046	0	1	50320	2	0	next	other	0
+CS	47	Response	4	3007671	1625	2
+CS	47	Response	7	3056201	50155	1
+CS	48	Picture	view	3056366	0	1	6665	2	0	next	other	0
+CS	48	Response	6	3062941	6575	1
+CS	49	Picture	move	3063031	0	1	40156	2	0	next	other	0
+CS	50	Picture	loadClose	3103187	0	1	53653	2	0	next	other	0
+CS	50	Response	4	3105579	2392	2
+CS	50	Response	7	3156759	53572	1
+CS	51	Picture	view	3156840	0	1	6332	2	0	next	other	0
+CS	51	Response	6	3163059	6219	1
+CS	52	Picture	move	3163172	0	1	39323	2	0	next	other	0
+CS	52	Response	4	3202378	39206	1
+CS	53	Picture	loadClose	3202495	0	1	55652	2	0	next	other	0
+CS	53	Response	7	3258047	55552	1
+CS	54	Picture	view	3258147	0	1	6831	3	0	next	other	0
+CS	54	Response	6	3264787	6640	1
+CS	55	Picture	move	3264978	0	2	40157	3	0	next	other	0
+CS	55	Response	4	3304975	39997	2
+CS	56	Picture	loadClose	3305135	0	1	50820	2	0	next	other	0
+CS	56	Response	7	3355905	50770	1
+CS	57	Picture	view	3355955	0	1	5831	3	0	next	other	0
+CS	57	Response	6	3361585	5630	1
+CS	58	Picture	move	3361786	0	2	37947	213	0	next	other	0
+CS	58	Response	4	3399714	37928	1
+CS	59	Picture	loadClose	3399733	0	211	71858	212	0	next	other	0
+CS	59	Response	7	3471502	71769	2
+CS	60	Picture	view	3471591	0	1	6332	2	0	next	other	0
+CS	60	Response	6	3477722	6131	2
+CS	61	Picture	move	3477923	0	1	36973	186	0	next	other	0
+CS	61	Response	4	3514882	36959	1
+CS	62	Picture	loadClose	3514896	0	185	46838	186	0	next	other	0
+CS	62	Response	7	3561630	46734	2
+CS	63	Picture	view	3561734	0	1	6165	2	0	next	other	0
+CS	63	Response	6	3567731	5997	1
+CS	64	Picture	move	3567899	0	1	33991	2	0	next	other	0
+CS	64	Response	4	3601710	33811	1
+CS	65	Picture	loadClose	3601890	0	1	68316	2	0	next	other	0
+CS	65	Response	7	3670088	68198	2
+CS	66	Picture	view	3670206	0	1	6332	2	0	next	other	0
+CS	66	Response	6	3676388	6182	2
+CS	67	Picture	move	3676538	0	1	36323	2	0	next	other	0
+CS	67	Response	4	3712748	36210	1
+CS	68	Picture	loadClose	3712861	0	1	56985	3	0	next	other	0
+CS	68	Response	7	3769776	56915	2
+CS	68	Response	7	3769797	56936	1
+CS	69	Picture	view	3769846	0	2	5499	3	0	next	other	0
+CS	69	Response	6	3775177	5331	1
+CS	70	Picture	move	3775345	0	1	36824	2	0	next	other	0
+CS	70	Response	4	3812075	36730	2
+CS	71	Picture	loadClose	3812169	0	1	1274833	2	0	next	other	0
+CS	71	Response	5	5086871	1274702	1
+CS	72	Picture	wrongHand	5087002	0	1	12164	2	0	next	false_alarm	147
+CS	72	Response	3	5099090	12088	1
+CS	73	Picture	endBlock	5099166	0	1	30159	2	0	next	other	0
+CS	73	Response	7	5106930	7764	1
+CS	74	Picture	begin	5129325	0	1	530195	2	0	next	other	0
+CS	74	Response	5	5581530	452205	2
+CS	74	Response	3	5628939	499614	2
+CS	74	Response	7	5659339	530014	1
+CS	75	Picture	loadClose	5659520	0	1	105972	2	0	next	other	0
+CS	75	Response	7	5765317	105797	1
+CS	76	Picture	view	5765492	0	1	19661	3	0	next	other	0
+CS	76	Response	6	5785057	19565	1
+CS	77	Picture	move	5785153	0	2	40157	3	0	next	other	0
+CS	78	Picture	loadClose	5825310	0	1	188784	2	0	next	other	0
+CS	78	Response	4	5830035	4725	2
+CS	78	Response	7	6014052	188742	1
+CS	79	Picture	view	6014094	0	1	9497	2	0	next	other	0
+CS	79	Response	6	6023492	9398	1
+CS	80	Picture	move	6023591	0	1	40156	2	0	next	other	0
+CS	81	Picture	loadClose	6063747	0	1	175788	2	0	next	other	0
+CS	81	Response	4	6082510	18763	2
+CS	81	Response	7	6239507	175760	2
+CS	82	Picture	view	6239535	0	1	7664	3	0	next	other	0
+CS	82	Response	6	6247147	7612	2
+CS	83	Picture	move	6247199	0	2	40157	3	0	next	other	0
+CS	84	Picture	loadClose	6287356	0	1	302754	2	0	next	other	0
+CS	84	Response	4	6325826	38470	1
+CS	84	Response	7	6589940	302584	2
+CS	85	Picture	view	6590110	0	1	6332	2	0	next	other	0
+CS	85	Response	6	6596360	6250	2
+CS	86	Picture	move	6596442	0	1	40156	2	0	next	other	0
+CS	87	Picture	loadClose	6636598	0	1	211944	3	0	next	other	0
+CS	87	Response	4	6647859	11261	2
+CS	87	Response	7	6848376	211778	1
+CS	88	Picture	view	6848542	0	2	8332	3	0	next	other	0
+CS	88	Response	6	6856736	8194	1
+CS	89	Picture	move	6856874	0	1	40156	2	0	next	other	0
+CS	90	Picture	loadClose	6897030	0	1	166623	2	0	next	other	0
+CS	90	Response	4	6899695	2665	1
+CS	90	Response	7	7063551	166521	2
+CS	91	Picture	view	7063653	0	1	8831	2	0	next	other	0
+CS	91	Response	6	7072431	8778	1
+CS	92	Picture	move	7072484	0	1	40156	3	0	next	other	0
+CS	93	Picture	loadClose	7112640	0	2	159792	3	0	next	other	0
+CS	93	Response	4	7159960	47320	1
+CS	93	Response	7	7272277	159637	1
+CS	94	Picture	view	7272432	0	1	6998	2	0	next	other	0
+CS	94	Response	6	7279357	6925	1
+CS	95	Picture	move	7279430	0	1	40156	2	0	next	other	0
+CS	96	Picture	loadClose	7319586	0	1	108305	2	0	next	other	0
+CS	96	Response	4	7321186	1600	2
+CS	96	Response	7	7427784	108198	1
+CS	97	Picture	view	7427891	0	1	7665	2	0	next	other	0
+CS	97	Response	6	7435504	7613	1
+CS	98	Picture	move	7435556	0	1	37106	220	0	next	other	0
+CS	98	Response	4	7472643	37087	2
+CS	99	Picture	loadClose	7472662	0	219	4883	220	0	next	other	0
+CS	99	Response	6	7477423	4761	1
+CS	100	Picture	wrongHand	7477545	0	1	1333	2	0	next	false_alarm	205
+CS	100	Response	4	7478803	1258	1
+CS	101	Picture	loadClose	7478878	0	1	74980	3	0	next	other	0
+CS	101	Response	7	7553821	74943	2
+CS	102	Picture	view	7553858	0	2	6832	3	0	next	other	0
+CS	102	Response	6	7560562	6704	1
+CS	103	Picture	move	7560690	0	1	37490	2	0	next	other	0
+CS	103	Response	4	7598000	37310	2
+CS	104	Picture	loadClose	7598180	0	1	105639	2	0	next	other	0
+CS	104	Response	7	7703728	105548	2
+CS	105	Picture	view	7703819	0	1	9831	2	0	next	other	0
+CS	105	Response	6	7713568	9749	2
+CS	106	Picture	move	7713650	0	1	40156	2	0	next	other	0
+CS	107	Picture	loadClose	7753806	0	1	92976	2	0	next	other	0
+CS	107	Response	4	7756468	2662	1
+CS	107	Response	7	7846665	92859	2
+CS	107	Response	7	7846686	92880	1
+CS	108	Picture	view	7846782	0	1	16496	2	0	next	other	0
+CS	108	Response	6	7863205	16423	2
+CS	109	Picture	move	7863278	0	1	40156	2	0	next	other	0
+CS	110	Picture	loadClose	7903434	0	1	318250	2	0	next	other	0
+CS	110	Response	4	7922405	18971	1
+CS	110	Response	7	8221548	318114	2
+CS	111	Picture	view	8221684	0	1	15663	2	0	next	other	0
+CS	111	Response	6	8237208	15524	1
+CS	112	Picture	move	8237347	0	1	40156	2	0	next	other	0
+CS	113	Picture	loadClose	8277503	0	1	225275	2	0	next	other	0
+CS	113	Response	4	8288317	10814	1
+CS	113	Response	7	8502733	225230	1
+CS	114	Picture	view	8502778	0	1	9497	2	0	next	other	0
+CS	114	Response	6	8512133	9355	1
+CS	115	Picture	move	8512275	0	1	38135	191	0	next	other	0
+CS	115	Response	4	8550392	38117	1
+CS	116	Picture	loadClose	8550410	0	190	68004	191	0	next	other	0
+CS	116	Response	7	8618390	67980	2
+CS	117	Picture	view	8618414	0	1	20495	2	0	next	other	0
+CS	117	Response	6	8638810	20396	1
+CS	118	Picture	move	8638909	0	1	40156	2	0	next	other	0
+CS	119	Picture	loadClose	8679065	0	1	73981	2	0	next	other	0
+CS	119	Response	4	8683709	4644	2
+CS	119	Response	7	8752908	73843	1
+CS	120	Picture	view	8753046	0	1	8164	2	0	next	other	0
+CS	120	Response	6	8761148	8102	1
+CS	121	Picture	move	8761210	0	1	36157	3	0	next	other	0
+CS	121	Response	4	8797257	36047	1
+CS	122	Picture	loadClose	8797367	0	2	93309	4	0	next	other	0
+CS	122	Response	7	8890575	93208	1
+CS	123	Picture	view	8890676	0	2	15330	3	0	next	other	0
+CS	123	Response	6	8905895	15219	1
+CS	124	Picture	move	8906006	0	1	40156	2	0	next	other	0
+CS	125	Picture	loadClose	8946162	0	1	7998	2	0	next	other	0
+CS	125	Response	4	8949234	3072	1
+CS	125	Response	6	8954054	7892	1
+CS	126	Picture	wrongHand	8954160	0	1	1166	2	0	next	false_alarm	258
+CS	126	Response	4	8955254	1094	1
+CS	127	Picture	loadClose	8955326	0	1	76980	2	0	next	other	0
+CS	127	Response	7	9032163	76837	1
+CS	128	Picture	view	9032306	0	1	9998	2	0	next	other	0
+CS	128	Response	6	9042202	9896	1
+CS	129	Picture	move	9042304	0	1	40156	2	0	next	other	0
+CS	130	Picture	loadClose	9082460	0	1	219276	2	0	next	other	0
+CS	130	Response	4	9088211	5751	2
+CS	130	Response	7	9301677	219217	1
+CS	131	Picture	view	9301736	0	1	11330	3	0	next	other	0
+CS	131	Response	6	9312997	11261	1
+CS	132	Picture	move	9313066	0	2	40157	3	0	next	other	0
+CS	133	Picture	loadClose	9353223	0	1	91809	2	0	next	other	0
+CS	133	Response	4	9358366	5143	1
+CS	133	Response	7	9444904	91681	1
+CS	134	Picture	view	9445032	0	1	12997	2	0	next	other	0
+CS	134	Response	6	9457924	12892	1
+CS	135	Picture	move	9458029	0	1	40156	2	0	next	other	0
+CS	136	Picture	loadClose	9498185	0	1	102973	2	0	next	other	0
+CS	136	Response	4	9498813	628	1
+CS	136	Response	7	9601071	102886	1
+CS	137	Picture	view	9601158	0	1	10830	3	0	next	other	0
+CS	137	Response	6	9611911	10753	1
+CS	138	Picture	move	9611988	0	2	40157	3	0	next	other	0
+CS	139	Picture	loadClose	9652145	0	1	81978	2	0	next	other	0
+CS	139	Response	4	9654010	1865	1
+CS	139	Response	7	9734108	81963	2
+CS	140	Picture	view	9734123	0	1	7498	3	0	next	other	0
+CS	140	Response	6	9741509	7386	1
+CS	141	Picture	move	9741621	0	2	40157	3	0	next	other	0
+CS	142	Picture	loadClose	9781778	0	1	132132	2	0	next	other	0
+CS	142	Response	4	9784747	2969	2
+CS	142	Response	7	9913745	131967	1
+CS	143	Picture	view	9913910	0	1	7998	2	0	next	other	0
+CS	143	Response	6	9921844	7934	2
+CS	144	Picture	move	9921908	0	1	40156	2	0	next	other	0
+CS	145	Picture	endBlock	9962064	0	1	30159	2	0	next	other	0
+CS	145	Response	4	9965814	3750	1
+CS	146	Picture	begin	9992223	0	1	9688143	2	0	next	other	0
+CS	146	Response	6	10225639	233416	1
+CS	146	Response	5	10225758	233535	2
+CS	146	Response	3	16267669	6275446	1
+CS	146	Response	5	16400206	6407983	2
+CS	146	Response	3	16449775	6457552	2
+CS	146	Response	5	16507724	6515501	2
+CS	146	Response	3	16585283	6593060	1
+CS	146	Response	5	16668651	6676428	1
+CS	146	Response	3	16763989	6771766	2
+CS	146	Response	5	16781929	6789706	1
+CS	146	Response	3	16807249	6815026	1
+CS	146	Response	5	16812789	6820566	1
+CS	146	Response	3	16862767	6870544	2
+CS	146	Response	5	16866427	6874204	1
+CS	146	Response	3	16906627	6914404	1
+CS	146	Response	5	17241329	7249106	2
+CS	146	Response	4	17469665	7477442	2
+CS	146	Response	6	17749139	7756916	2
+CS	146	Response	3	17760899	7768676	2
+CS	146	Response	5	17776279	7784056	2
+CS	146	Response	3	17796839	7804616	1
+CS	146	Response	5	17807919	7815696	1
+CS	146	Response	3	17841878	7849655	1
+CS	146	Response	5	17870578	7878355	1
+CS	146	Response	3	17905076	7912853	2
+CS	146	Response	5	17911136	7918913	2
+CS	146	Response	3	18019094	8026871	2
+CS	146	Response	5	18025634	8033411	2
+CS	146	Response	3	18196211	8203988	1
+CS	146	Response	5	18204471	8212248	1
+CS	146	Response	3	18566183	8573960	2
+CS	146	Response	5	18568543	8576320	2
+CS	146	Response	3	18570744	8578521	1
+CS	146	Response	5	18581523	8589300	2
+CS	146	Response	3	18616693	8624470	1
+CS	146	Response	5	18638462	8646239	1
+CS	146	Response	3	18884087	8891864	2
+CS	146	Response	5	18891827	8899604	1
+CS	146	Response	3	18930347	8938124	1
+CS	146	Response	5	18938666	8946443	1
+CS	146	Response	3	19314289	9322066	1
+CS	146	Response	4	19314449	9322226	1
+CS	146	Response	5	19346188	9353965	1
+CS	146	Response	3	19373448	9381225	1
+CS	146	Response	5	19384187	9391964	2
+CS	146	Response	3	19412347	9420124	1
+CS	146	Response	6	19443546	9451323	1
+CS	146	Response	5	19443546	9451323	2
+CS	146	Response	3	19583714	9591491	1
+CS	146	Response	4	19584354	9592131	1
+CS	146	Response	1	19679917	9687694	1
+CS	147	Picture	loadClose	19680366	0	1	81812	2	0	next	other	0
+CS	147	Response	7	19762000	81634	1
+CS	148	Picture	view	19762178	0	1	10164	2	0	next	other	0
+CS	148	Response	5	19772220	10042	1
+CS	149	Picture	move	19772342	0	1	40156	2	0	next	other	0
+CS	150	Picture	loadClose	19812498	0	1	89477	2	0	next	other	0
+CS	150	Response	3	19817919	5421	1
+CS	150	Response	7	19901947	89449	1
+CS	151	Picture	view	19901975	0	1	8331	2	0	next	other	0
+CS	151	Response	5	19910267	8292	1
+CS	152	Picture	move	19910306	0	1	34324	3	0	next	other	0
+CS	152	Response	3	19944557	34251	1
+CS	153	Picture	loadClose	19944630	0	2	86811	3	0	next	other	0
+CS	153	Response	7	20031395	86765	1
+CS	154	Picture	view	20031441	0	1	7498	2	0	next	other	0
+CS	154	Response	5	20038855	7414	1
+CS	155	Picture	move	20038939	0	1	34658	2	0	next	other	0
+CS	155	Response	3	20073494	34555	1
+CS	156	Picture	loadClose	20073597	0	1	84644	3	0	next	other	0
+CS	156	Response	7	20158162	84565	1
+CS	157	Picture	view	20158241	0	2	6665	4	0	next	other	0
+CS	157	Response	5	20164842	6601	1
+CS	158	Picture	move	20164906	0	2	38490	3	0	next	other	0
+CS	158	Response	3	20203271	38365	1
+CS	159	Picture	loadClose	20203396	0	1	92476	2	0	next	other	0
+CS	159	Response	7	20295819	92423	2
+CS	160	Picture	view	20295872	0	1	23494	2	0	next	other	0
+CS	160	Response	5	20319179	23307	1
+CS	161	Picture	move	20319366	0	1	37157	2	0	next	other	0
+CS	161	Response	3	20356408	37042	1
+CS	162	Picture	loadClose	20356523	0	1	88144	2	0	next	other	0
+CS	162	Response	7	20444607	88084	1
+CS	163	Picture	view	20444667	0	1	11497	2	0	next	other	0
+CS	163	Response	5	20456066	11399	1
+CS	164	Picture	move	20456164	0	1	39823	2	0	next	other	0
+CS	164	Response	3	20495855	39691	2
+CS	165	Picture	loadClose	20495987	0	1	76313	2	0	next	other	0
+CS	165	Response	7	20572224	76237	1
+CS	166	Picture	view	20572300	0	1	9998	2	0	next	other	0
+CS	166	Response	5	20582204	9904	1
+CS	167	Picture	move	20582298	0	1	38490	2	0	next	other	0
+CS	167	Response	3	20620683	38385	1
+CS	168	Picture	loadClose	20620788	0	1	81145	2	0	next	other	0
+CS	168	Response	7	20701781	80993	2
+CS	169	Picture	view	20701933	0	1	13663	2	0	next	other	0
+CS	169	Response	5	20715481	13548	1
+CS	170	Picture	move	20715596	0	1	40156	3	0	next	other	0
+CS	171	Picture	loadClose	20755752	0	2	86478	3	0	next	other	0
+CS	171	Response	3	20763450	7698	1
+CS	171	Response	7	20842099	86347	1
+CS	172	Picture	view	20842230	0	1	6998	2	0	next	other	0
+CS	172	Response	5	20849118	6888	2
+CS	173	Picture	move	20849228	0	1	32158	2	0	next	other	0
+CS	173	Response	3	20881297	32069	2
+CS	174	Picture	loadClose	20881386	0	1	92643	2	0	next	other	0
+CS	174	Response	7	20973856	92470	1
+CS	175	Picture	view	20974029	0	1	8331	2	0	next	other	0
+CS	175	Response	5	20982256	8227	1
+CS	176	Picture	move	20982360	0	1	37490	2	0	next	other	0
+CS	176	Response	3	21019665	37305	1
+CS	177	Picture	loadClose	21019850	0	1	99474	2	0	next	other	0
+CS	177	Response	7	21119203	99353	1
+CS	178	Picture	view	21119324	0	1	6332	2	0	next	other	0
+CS	178	Response	5	21125563	6239	1
+CS	179	Picture	move	21125656	0	1	40156	2	0	next	other	0
+CS	180	Picture	loadClose	21165812	0	1	13997	2	0	next	other	0
+CS	180	Response	3	21167142	1330	1
+CS	180	Response	5	21179782	13970	1
+CS	181	Picture	wrongHand	21179809	0	1	1832	3	0	next	false_alarm	417
+CS	181	Response	3	21181521	1712	2
+CS	182	Picture	loadClose	21181641	0	2	78980	3	0	next	other	0
+CS	182	Response	7	21260470	78829	2
+CS	183	Picture	view	21260621	0	1	6332	2	0	next	other	0
+CS	183	Response	5	21266830	6209	1
+CS	184	Picture	move	21266953	0	1	38785	207	0	next	other	0
+CS	184	Response	3	21305720	38767	1
+CS	185	Picture	loadClose	21305738	0	206	241142	207	0	next	other	0
+CS	185	Response	7	21546734	240996	2
+CS	186	Picture	view	21546880	0	1	8497	3	0	next	other	0
+CS	186	Response	5	21555275	8395	1
+CS	187	Picture	move	21555377	0	2	37324	3	0	next	other	0
+CS	187	Response	3	21592513	37136	2
+CS	188	Picture	loadClose	21592701	0	1	207279	2	0	next	other	0
+CS	188	Response	7	21799859	207158	2
+CS	189	Picture	view	21799980	0	1	8498	2	0	next	other	0
+CS	189	Response	5	21808380	8400	1
+CS	190	Picture	move	21808478	0	1	40156	2	0	next	other	0
+CS	191	Picture	loadClose	21848634	0	1	112471	2	0	next	other	0
+CS	191	Response	3	21853718	5084	2
+CS	191	Response	7	21960936	112302	2
+CS	192	Picture	view	21961105	0	1	7498	2	0	next	other	0
+CS	192	Response	5	21968456	7351	1
+CS	193	Picture	move	21968603	0	1	38157	2	0	next	other	0
+CS	193	Response	3	22006575	37972	2
+CS	194	Picture	loadClose	22006760	0	1	76647	2	0	next	other	0
+CS	194	Response	7	22083384	76624	1
+CS	195	Picture	view	22083407	0	1	8331	2	0	next	other	0
+CS	195	Response	5	22091623	8216	2
+CS	196	Picture	move	22091738	0	1	40156	2	0	next	other	0
+CS	197	Picture	loadClose	22131894	0	1	126300	2	0	next	other	0
+CS	197	Response	3	22132343	449	1
+CS	197	Response	7	22258140	126246	2
+CS	198	Picture	view	22258194	0	1	6665	3	0	next	other	0
+CS	198	Response	5	22264701	6507	1
+CS	199	Picture	move	22264859	0	2	38324	3	0	next	other	0
+CS	199	Response	3	22303060	38201	1
+CS	200	Picture	loadClose	22303183	0	1	78979	2	0	next	other	0
+CS	200	Response	7	22382118	78935	1
+CS	201	Picture	view	22382162	0	1	8664	3	0	next	other	0
+CS	201	Response	5	22390698	8536	1
+CS	202	Picture	move	22390826	0	2	36629	198	0	next	other	0
+CS	202	Response	3	22427437	36611	1
+CS	203	Picture	loadClose	22427455	0	196	95337	197	0	next	other	0
+CS	203	Response	7	22522705	95250	2
+CS	204	Picture	view	22522792	0	1	30659	2	0	next	other	0
+CS	204	Response	5	22553395	30603	1
+CS	205	Picture	move	22553451	0	1	37823	2	0	next	other	0
+CS	205	Response	3	22591134	37683	1
+CS	206	Picture	loadClose	22591274	0	1	111804	3	0	next	other	0
+CS	206	Response	7	22702922	111648	1
+CS	207	Picture	view	22703078	0	2	40990	3	0	next	other	0
+CS	207	Response	5	22743981	40903	1
+CS	208	Picture	move	22744068	0	1	40156	2	0	next	other	0
+CS	209	Picture	loadClose	22784224	0	1	100307	2	0	next	other	0
+CS	209	Response	3	22791580	7356	1
+CS	209	Response	7	22884358	100134	1
+CS	209	Response	7	22884375	100151	5
+CS	210	Picture	view	22884531	0	1	9331	2	0	next	other	0
+CS	210	Response	5	22893778	9247	1
+CS	211	Picture	move	22893862	0	1	34824	2	0	next	other	0
+CS	211	Response	3	22928557	34695	2
+CS	212	Picture	loadClose	22928686	0	1	96475	2	0	next	other	0
+CS	212	Response	7	23025045	96359	2
+CS	212	Response	7	23025065	96379	2
+CS	213	Picture	view	23025161	0	1	9498	2	0	next	other	0
+CS	213	Response	5	23034525	9364	1
+CS	214	Picture	move	23034659	0	1	39274	218	0	next	other	0
+CS	214	Response	3	23073915	39256	1
+CS	215	Picture	loadClose	23073933	0	217	75862	218	0	next	other	0
+CS	215	Response	7	23149733	75800	1
+CS	216	Picture	view	23149795	0	1	7998	3	0	next	other	0
+CS	216	Response	5	23157692	7897	2
+CS	217	Picture	move	23157793	0	2	35491	3	0	next	other	0
+CS	217	Response	3	23193222	35429	1
+CS	218	Picture	endBlock	23193284	0	1	30159	2	0	next	other	0
+CS	219	Picture	begin	23223443	0	1	183452	2	0	next	other	0
+CS	219	Response	5	23229031	5588	2
+CS	219	Response	6	23229351	5908	1
+CS	219	Response	7	23406778	183335	1
+CS	220	Picture	loadClose	23406895	0	1	61651	2	0	next	other	0
+CS	220	Response	3	23418727	11832	2
+CS	220	Response	4	23419228	12333	1
+CS	220	Response	7	23468526	61631	2
+CS	221	Picture	view	23468546	0	1	7331	2	0	next	other	0
+CS	221	Response	5	23475807	7261	1
+CS	222	Picture	move	23475877	0	1	30159	2	0	next	other	0
+CS	222	Response	3	23505885	30008	2
+CS	223	Picture	loadClose	23506036	0	1	62650	3	0	next	other	0
+CS	223	Response	7	23568574	62538	2
+CS	224	Picture	view	23568686	0	2	6332	3	0	next	other	0
+CS	224	Response	5	23574884	6198	2
+CS	225	Picture	move	23575018	0	1	32991	3	0	next	other	0
+CS	225	Response	3	23607913	32895	2
+CS	226	Picture	loadClose	23608009	0	2	88644	3	0	next	other	0
+CS	226	Response	7	23696592	88583	1
+CS	227	Picture	view	23696653	0	1	8331	2	0	next	other	0
+CS	227	Response	5	23704892	8239	1
+CS	228	Picture	move	23704984	0	1	36491	2	0	next	other	0
+CS	228	Response	3	23741371	36387	1
+CS	229	Picture	loadClose	23741475	0	1	76646	2	0	next	other	0
+CS	229	Response	7	23818050	76575	1
+CS	230	Picture	view	23818121	0	1	6499	2	0	next	other	0
+CS	230	Response	5	23824490	6369	1
+CS	231	Picture	move	23824620	0	1	29659	2	0	next	other	0
+CS	231	Response	3	23854089	29469	1
+CS	232	Picture	loadClose	23854279	0	1	92809	2	0	next	other	0
+CS	232	Response	7	23947027	92748	1
+CS	233	Picture	view	23947088	0	1	6331	3	0	next	other	0
+CS	233	Response	5	23953327	6239	1
+CS	234	Picture	move	23953419	0	2	27993	3	0	next	other	0
+CS	234	Response	3	23981286	27867	2
+CS	235	Picture	loadClose	23981412	0	1	84645	2	0	next	other	0
+CS	235	Response	7	24065924	84512	2
+CS	236	Picture	view	24066057	0	1	5332	2	0	next	other	0
+CS	236	Response	5	24071245	5188	1
+CS	237	Picture	move	24071389	0	1	28809	185	0	next	other	0
+CS	237	Response	3	24100184	28795	1
+CS	238	Picture	loadClose	24100198	0	184	102823	185	0	next	other	0
+CS	238	Response	7	24202982	102784	1
+CS	239	Picture	view	24203021	0	1	5665	2	0	next	other	0
+CS	239	Response	5	24208642	5621	1
+CS	240	Picture	move	24208686	0	1	28326	2	0	next	other	0
+CS	240	Response	3	24236911	28225	2
+CS	241	Picture	loadClose	24237012	0	1	63484	2	0	next	other	0
+CS	241	Response	7	24300390	63378	1
+CS	242	Picture	view	24300496	0	1	5332	2	0	next	other	0
+CS	242	Response	5	24305670	5174	1
+CS	243	Picture	move	24305828	0	1	35990	2	0	next	other	0
+CS	243	Response	3	24341719	35891	1
+CS	244	Picture	loadClose	24341818	0	1	204447	2	0	next	other	0
+CS	244	Response	7	24546115	204297	1
+CS	245	Picture	view	24546265	0	1	7665	2	0	next	other	0
+CS	245	Response	5	24553815	7550	1
+CS	246	Picture	move	24553930	0	1	37490	2	0	next	other	0
+CS	246	Response	3	24591254	37324	2
+CS	247	Picture	loadClose	24591420	0	1	86977	2	0	next	other	0
+CS	247	Response	7	24678323	86903	1
+CS	247	Response	7	24678342	86922	2
+CS	248	Picture	view	24678397	0	1	7498	3	0	next	other	0
+CS	248	Response	5	24685762	7365	2
+CS	249	Picture	move	24685895	0	2	30159	3	0	next	other	0
+CS	249	Response	3	24715922	30027	1
+CS	250	Picture	loadClose	24716054	0	1	46488	2	0	next	other	0
+CS	250	Response	7	24762371	46317	1
+CS	251	Picture	view	24762542	0	1	6998	2	0	next	other	0
+CS	251	Response	5	24769491	6949	1
+CS	252	Picture	move	24769540	0	1	29326	2	0	next	other	0
+CS	252	Response	3	24798750	29210	1
+CS	253	Picture	loadClose	24798866	0	1	51153	2	0	next	other	0
+CS	253	Response	7	24849869	51003	1
+CS	254	Picture	view	24850019	0	1	6998	3	0	next	other	0
+CS	254	Response	5	24856869	6850	1
+CS	255	Picture	move	24857017	0	2	30992	3	0	next	other	0
+CS	255	Response	3	24887828	30811	2
+CS	256	Picture	loadClose	24888009	0	1	52820	2	0	next	other	0
+CS	256	Response	7	24940677	52668	2
+CS	257	Picture	view	24940829	0	1	6665	2	0	next	other	0
+CS	257	Response	5	24947297	6468	1
+CS	258	Picture	move	24947494	0	1	33658	2	0	next	other	0
+CS	258	Response	3	24981076	33582	2
+CS	259	Picture	loadClose	24981152	0	1	66316	2	0	next	other	0
+CS	259	Response	7	25047435	66283	2
+CS	260	Picture	view	25047468	0	1	7165	2	0	next	other	0
+CS	260	Response	5	25054575	7107	1
+CS	261	Picture	move	25054633	0	1	40156	2	0	next	other	0
+CS	262	Picture	loadClose	25094789	0	1	54819	2	0	next	other	0
+CS	262	Response	3	25114374	19585	1
+CS	262	Response	7	25149533	54744	1
+CS	263	Picture	view	25149608	0	1	7998	2	0	next	other	0
+CS	263	Response	5	25157413	7805	1
+CS	264	Picture	move	25157606	0	1	37157	2	0	next	other	0
+CS	264	Response	3	25194643	37037	1
+CS	265	Picture	loadClose	25194763	0	1	77313	2	0	next	other	0
+CS	265	Response	7	25271930	77167	2
+CS	266	Picture	view	25272076	0	1	7831	3	0	next	other	0
+CS	266	Response	5	25279711	7635	1
+CS	267	Picture	move	25279907	0	2	38824	3	0	next	other	0
+CS	267	Response	3	25318590	38683	1
+CS	268	Picture	loadClose	25318731	0	1	56651	3	0	next	other	0
+CS	268	Response	7	25375238	56507	2
+CS	269	Picture	view	25375382	0	2	4999	3	0	next	other	0
+CS	269	Response	5	25380239	4857	1
+CS	270	Picture	move	25380381	0	1	39775	217	0	next	other	0
+CS	270	Response	3	25420138	39757	1
+CS	271	Picture	loadClose	25420156	0	216	58366	217	0	next	other	0
+CS	271	Response	7	25478387	58231	1
+CS	272	Picture	view	25478522	0	1	5499	2	0	next	other	0
+CS	272	Response	5	25483827	5305	1
+CS	273	Picture	move	25484021	0	1	31825	2	0	next	other	0
+CS	273	Response	3	25515716	31695	1
+CS	274	Picture	loadClose	25515846	0	1	44488	2	0	next	other	0
+CS	274	Response	7	25560315	44469	1
+CS	275	Picture	view	25560334	0	1	6332	2	0	next	other	0
+CS	275	Response	5	25566595	6261	1
+CS	276	Picture	move	25566666	0	1	32112	215	0	next	other	0
+CS	276	Response	3	25598764	32098	2
+CS	277	Picture	loadClose	25598778	0	214	45035	215	0	next	other	0
+CS	277	Response	7	25643744	44966	1
+CS	278	Picture	view	25643813	0	1	7331	2	0	next	other	0
+CS	278	Response	5	25650943	7130	2
+CS	279	Picture	move	25651144	0	1	29638	190	0	next	other	0
+CS	279	Response	3	25680762	29618	2
+CS	280	Picture	loadClose	25680782	0	189	56673	190	0	next	other	0
+CS	280	Response	7	25737411	56629	2
+CS	281	Picture	view	25737455	0	1	6332	2	0	next	other	0
+CS	281	Response	5	25743731	6276	2
+CS	282	Picture	move	25743787	0	1	37323	2	0	next	other	0
+CS	282	Response	3	25780971	37184	1
+CS	283	Picture	loadClose	25781110	0	1	56319	2	0	next	other	0
+CS	283	Response	7	25837390	56280	1
+CS	284	Picture	view	25837429	0	1	6998	2	0	next	other	0
+CS	284	Response	5	25844389	6960	2
+CS	285	Picture	move	25844427	0	1	39656	2	0	next	other	0
+CS	285	Response	3	25883978	39551	2
+CS	286	Picture	loadClose	25884083	0	1	5999	2	0	next	other	0
+CS	286	Response	6	25889928	5845	2
+CS	287	Picture	wrongHand	25890082	0	1	1999	2	0	next	false_alarm	635
+CS	287	Response	4	25891948	1866	2
+CS	288	Picture	loadClose	25892081	0	1	51487	2	0	next	other	0
+CS	288	Response	7	25943487	51406	2
+CS	289	Picture	view	25943568	0	1	4499	2	0	next	other	0
+CS	289	Response	5	25947967	4399	2
+CS	290	Picture	move	25948067	0	1	34991	2	0	next	other	0
+CS	290	Response	3	25983006	34939	2
+CS	291	Picture	endSession	25983058	0	1	36659	2	0	next	other	0

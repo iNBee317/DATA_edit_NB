@@ -1,0 +1,113 @@
+Scenario - opto_replant
+Logfile written - 12/12/2014 12:21:22
+
+Subject	Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
+
+03_33	1	Picture	begin	332	0	2	167461	3	0	next	other	0
+03_33	1	Response	9	167570	167238	2
+03_33	2	Picture	loadClose	167793	0	1	84980	2	0	next	other	0
+03_33	2	Response	9	252628	84835	2
+03_33	3	Picture	view	252773	0	1	7482	186	0	next	other	0
+03_33	3	Response	8	260178	7405	2
+03_33	4	Picture	move	260255	0	185	46671	187	0	next	other	0
+03_33	4	Response	2	294418	34163	1
+03_33	4	Response	6	306716	46461	2
+03_33	5	Picture	loadClose	306926	0	2	126304	3	0	next	other	0
+03_33	5	Response	9	433132	126206	2
+03_33	6	Picture	view	433230	0	1	7153	182	0	next	other	0
+03_33	6	Response	8	440302	7072	2
+03_33	7	Picture	move	440383	0	181	41003	182	0	next	other	0
+03_33	7	Response	2	475053	34670	1
+03_33	7	Response	6	481201	40818	2
+03_33	8	Picture	loadClose	481386	0	1	145299	2	0	next	other	0
+03_33	8	Response	9	626587	145201	2
+03_33	8	Response	9	626607	145221	2
+03_33	9	Picture	view	626685	0	1	9997	3	0	next	other	0
+03_33	9	Response	8	636536	9851	2
+03_33	10	Picture	move	636682	0	2	50155	4	0	next	other	0
+03_33	10	Response	2	682085	45403	3
+03_33	11	Picture	loadClose	686837	0	2	92312	3	0	next	other	0
+03_33	11	Response	6	695545	8708	1
+03_33	11	Response	9	779072	92235	2
+03_33	12	Picture	view	779149	0	1	8664	3	0	next	other	0
+03_33	12	Response	8	787572	8423	2
+03_33	13	Picture	move	787813	0	2	50155	3	0	next	other	0
+03_33	13	Response	2	829602	41789	1
+03_33	14	Picture	loadClose	837968	0	1	66650	3	0	next	other	0
+03_33	14	Response	6	839110	1142	2
+03_33	14	Response	9	904588	66620	2
+03_33	15	Picture	view	904618	0	2	6808	195	0	next	other	0
+03_33	15	Response	8	911338	6720	2
+03_33	16	Picture	move	911426	0	193	50003	371	0	next	other	0
+03_33	16	Response	2	948637	37211	3
+03_33	16	Response	6	961387	49961	1
+03_33	17	Picture	loadClose	961429	0	178	70493	180	0	next	other	0
+03_33	17	Response	9	1031874	70445	2
+03_33	17	Response	9	1031894	70465	2
+03_33	18	Picture	view	1031922	0	2	8971	31	0	next	other	0
+03_33	18	Response	8	1040814	8892	2
+03_33	19	Picture	move	1040893	0	29	44184	30	0	next	other	0
+03_33	19	Response	2	1077755	36862	1
+03_33	19	Response	6	1084883	43990	2
+03_33	20	Picture	loadClose	1085077	0	1	109474	2	0	next	other	0
+03_33	20	Response	9	1194490	109413	1
+03_33	21	Picture	view	1194551	0	1	7831	3	0	next	other	0
+03_33	21	Response	8	1202229	7678	2
+03_33	22	Picture	move	1202382	0	2	47822	4	0	next	other	0
+03_33	22	Response	2	1240310	37928	1
+03_33	22	Response	6	1250118	47736	2
+03_33	23	Picture	loadClose	1250204	0	2	88813	3	0	next	other	0
+03_33	23	Response	9	1338875	88671	2
+03_33	23	Response	9	1338895	88691	2
+03_33	24	Picture	view	1339017	0	1	10664	2	0	next	other	0
+03_33	24	Response	8	1349435	10418	2
+03_33	25	Picture	move	1349681	0	1	45300	191	0	next	other	0
+03_33	25	Response	2	1389425	39744	1
+03_33	25	Response	6	1394924	45243	1
+03_33	26	Picture	loadClose	1394981	0	190	58509	191	0	next	other	0
+03_33	26	Response	9	1453312	58331	2
+03_33	27	Picture	view	1453490	0	1	11164	2	0	next	other	0
+03_33	27	Response	8	1464521	11031	2
+03_33	28	Picture	move	1464654	0	1	44323	2	0	next	other	0
+03_33	28	Response	2	1493422	28768	1
+03_33	28	Response	6	1508900	44246	2
+03_33	29	Picture	endBlock	1508977	0	1	30159	2	0	next	other	0
+03_33	30	Picture	begin	1539136	0	1	340253	3	0	next	other	0
+03_33	30	Response	9	1879199	340063	2
+03_33	31	Picture	loadClose	1879389	0	2	61734	3	0	next	other	0
+03_33	31	Quit		1940449	61060
+
+
+Event Type	Code	Type	Response	RT	RT Uncertainty	Time	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur
+
+Picture	begin	other				332	2	167461	3	0	next
+Picture	loadClose	other				167793	1	84980	2	0	next
+Picture	view	other				252773	1	7482	186	0	next
+Picture	move	other				260255	185	46671	187	0	next
+Picture	loadClose	other				306926	2	126304	3	0	next
+Picture	view	other				433230	1	7153	182	0	next
+Picture	move	other				440383	181	41003	182	0	next
+Picture	loadClose	other				481386	1	145299	2	0	next
+Picture	view	other				626685	1	9997	3	0	next
+Picture	move	other				636682	2	50155	4	0	next
+Picture	loadClose	other				686837	2	92312	3	0	next
+Picture	view	other				779149	1	8664	3	0	next
+Picture	move	other				787813	2	50155	3	0	next
+Picture	loadClose	other				837968	1	66650	3	0	next
+Picture	view	other				904618	2	6808	195	0	next
+Picture	move	other				911426	193	50003	371	0	next
+Picture	loadClose	other				961429	178	70493	180	0	next
+Picture	view	other				1031922	2	8971	31	0	next
+Picture	move	other				1040893	29	44184	30	0	next
+Picture	loadClose	other				1085077	1	109474	2	0	next
+Picture	view	other				1194551	1	7831	3	0	next
+Picture	move	other				1202382	2	47822	4	0	next
+Picture	loadClose	other				1250204	2	88813	3	0	next
+Picture	view	other				1339017	1	10664	2	0	next
+Picture	move	other				1349681	1	45300	191	0	next
+Picture	loadClose	other				1394981	190	58509	191	0	next
+Picture	view	other				1453490	1	11164	2	0	next
+Picture	move	other				1464654	1	44323	2	0	next
+Picture	endBlock	other				1508977	1	30159	2	0	next
+Picture	begin	other				1539136	1	340253	3	0	next
+Picture	loadClose	other				1879389	2	61734	3	0	next

@@ -1,0 +1,320 @@
+Scenario - opto_replant
+Logfile written - 04/13/2012 11:56:40
+
+Subject	Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
+
+RW	1	Picture	begin	499	0	1	20828	2	0	next	other	0
+RW	1	Response	1	21238	20739	1
+RW	2	Picture	loadClose	21327	0	1	80646	2	0	next	other	0
+RW	2	Response	1	101876	80549	1
+RW	3	Picture	view	101973	0	1	10164	2	0	next	other	0
+RW	4	Picture	movementOpen	112137	144	1	39989	2	0	next	other	0
+RW	4	Response	6	117155	5162	1
+RW	4	Response	4	148934	36941	1
+RW	5	Picture	loadClose	152126	0	1	48488	2	0	next	other	0
+RW	5	Response	1	200594	48468	1
+RW	6	Picture	view	200614	0	1	10164	2	0	next	other	0
+RW	7	Picture	movementOpen	210778	157	1	39989	2	0	next	other	0
+RW	7	Response	6	214122	3501	2
+RW	8	Picture	reacqDelayAlreadyOpen	250767	0	1	44155	2	0	next	other	0
+RW	8	Response	4	294763	43996	1
+RW	9	Picture	loadClose	294922	0	1	71648	2	0	next	other	0
+RW	9	Response	1	366511	71589	1
+RW	10	Picture	view	366570	0	1	10164	3	0	next	other	0
+RW	11	Picture	movementOpen	376734	153	2	39990	3	0	next	other	0
+RW	11	Response	6	379119	2538	1
+RW	11	Response	4	404159	27578	1
+RW	12	Picture	loadClose	416724	0	1	51653	3	0	next	other	0
+RW	12	Response	1	468269	51545	1
+RW	13	Picture	view	468377	0	2	10164	3	0	next	other	0
+RW	14	Picture	movementClosed	478541	153	1	39990	2	0	next	other	0
+RW	14	Response	6	480637	2249	1
+RW	14	Response	4	512877	34489	1
+RW	15	Picture	loadAlready	518531	0	1	53819	2	0	next	other	0
+RW	15	Response	1	572267	53736	1
+RW	16	Picture	view	572350	0	1	5499	2	0	next	other	0
+RW	16	Response	6	577675	5325	2
+RW	17	Picture	wrongHand	577849	172	1	27659	2	0	next	false_alarm	33
+RW	17	Response	4	605394	27717	2
+RW	18	Picture	loadClose	605508	0	1	106139	2	0	next	other	0
+RW	18	Response	1	711624	106116	1
+RW	19	Picture	view	711647	0	1	10164	2	0	next	other	0
+RW	20	Picture	movementOpen	721811	156	1	39990	2	0	next	other	0
+RW	20	Response	6	725153	3498	1
+RW	20	Response	4	748212	26557	1
+RW	21	Picture	loadClose	761801	0	1	98307	2	0	next	other	0
+RW	21	Response	1	859941	98140	1
+RW	22	Picture	view	860108	0	1	10164	3	0	next	other	0
+RW	23	Picture	movementOpen	870272	153	2	39990	3	0	next	other	0
+RW	23	Response	6	874269	4150	2
+RW	23	Response	4	901209	31090	1
+RW	24	Picture	loadClose	910262	0	1	81645	2	0	next	other	0
+RW	24	Response	1	991778	81516	2
+RW	25	Picture	view	991907	0	1	10164	2	0	next	other	0
+RW	26	Picture	movementClosed	1002071	156	1	39990	2	0	next	other	0
+RW	26	Response	6	1004657	2742	1
+RW	26	Response	4	1033816	31901	1
+RW	27	Picture	loadAlready	1042061	0	1	195116	2	0	next	other	0
+RW	27	Response	1	1237053	194992	2
+RW	28	Picture	view	1237177	0	1	10164	2	0	next	other	0
+RW	29	Picture	movementOpen	1247341	153	1	39989	2	0	next	other	0
+RW	29	Response	6	1254152	6964	1
+RW	30	Picture	reacqDelayAlreadyOpen	1287330	0	1	31325	3	0	next	other	0
+RW	30	Response	4	1318491	31161	1
+RW	31	Picture	loadClose	1318655	0	2	60651	3	0	next	other	0
+RW	31	Response	1	1379131	60476	1
+RW	32	Picture	view	1379306	0	1	10164	3	0	next	other	0
+RW	33	Picture	movementClosed	1389470	152	2	39990	3	0	next	other	0
+RW	33	Response	6	1391740	2422	1
+RW	34	Picture	reacqDelayOpen	1429460	0	1	13330	2	0	next	other	0
+RW	34	Response	4	1442668	13208	1
+RW	35	Picture	loadClose	1442790	0	1	56818	2	0	next	other	0
+RW	35	Response	1	1499448	56658	2
+RW	36	Picture	view	1499608	0	1	10164	2	0	next	other	0
+RW	37	Picture	movementOpen	1509772	153	1	39990	2	0	next	other	0
+RW	37	Response	6	1512526	2907	2
+RW	37	Response	4	1536006	26387	2
+RW	38	Picture	loadClose	1549762	0	1	51320	2	0	next	other	0
+RW	38	Response	1	1601046	51284	1
+RW	39	Picture	view	1601082	0	1	10164	2	0	next	other	0
+RW	40	Picture	movementOpen	1611246	157	1	39989	2	0	next	other	0
+RW	40	Response	6	1613535	2446	1
+RW	40	Response	4	1638274	27185	2
+RW	41	Picture	loadClose	1651235	0	1	63484	2	0	next	other	0
+RW	41	Response	1	1714644	63409	1
+RW	42	Picture	view	1714719	0	1	10164	2	0	next	other	0
+RW	43	Picture	movementClosed	1724883	153	1	39989	2	0	next	other	0
+RW	43	Response	6	1727272	2542	2
+RW	44	Picture	reacqDelayOpen	1764872	0	1	7498	2	0	next	other	0
+RW	44	Response	4	1772301	7429	2
+RW	45	Picture	loadClose	1772370	0	1	106473	2	0	next	other	0
+RW	45	Response	1	1878801	106431	1
+RW	46	Picture	view	1878843	0	1	10164	2	0	next	other	0
+RW	47	Picture	movementClosed	1889007	153	1	39989	2	0	next	other	0
+RW	47	Response	6	1891519	2665	2
+RW	48	Picture	reacqDelayOpen	1928996	0	1	9165	2	0	next	other	0
+RW	48	Response	4	1937978	8982	2
+RW	49	Picture	loadClose	1938161	0	1	62650	2	0	next	other	0
+RW	49	Response	1	2000718	62557	2
+RW	50	Picture	view	2000811	0	1	10164	2	0	next	other	0
+RW	51	Picture	movementOpen	2010975	153	1	39989	3	0	next	other	0
+RW	51	Response	6	2018047	7225	1
+RW	51	Response	4	2041676	30854	2
+RW	52	Picture	loadClose	2050964	0	2	55653	3	0	next	other	0
+RW	52	Response	1	2106476	55512	1
+RW	53	Picture	view	2106617	0	1	10164	2	0	next	other	0
+RW	54	Picture	movementClosed	2116781	155	1	39989	2	0	next	other	0
+RW	54	Response	6	2119685	3059	1
+RW	55	Picture	reacqDelayOpen	2156770	0	1	8165	2	0	next	other	0
+RW	55	Response	4	2164904	8134	1
+RW	56	Picture	loadClose	2164935	0	1	65149	2	0	next	other	0
+RW	56	Response	1	2229994	65059	1
+RW	57	Picture	view	2230084	0	1	10164	3	0	next	other	0
+RW	58	Picture	movementClosed	2240248	153	2	39990	3	0	next	other	0
+RW	58	Response	6	2242912	2817	2
+RW	59	Picture	reacqDelayOpen	2280238	0	1	9664	2	0	next	other	0
+RW	59	Response	4	2289791	9553	2
+RW	60	Picture	loadClose	2289902	0	1	63983	3	0	next	other	0
+RW	60	Response	1	2353831	63929	2
+RW	61	Picture	view	2353885	0	2	10164	4	0	next	other	0
+RW	62	Picture	movementClosed	2364049	152	2	39990	3	0	next	other	0
+RW	62	Response	6	2367060	3163	1
+RW	63	Picture	reacqDelayOpen	2404039	0	1	6998	2	0	next	other	0
+RW	63	Response	4	2410999	6960	1
+RW	64	Picture	loadClose	2411037	0	1	57652	2	0	next	other	0
+RW	64	Response	1	2468549	57512	1
+RW	65	Picture	view	2468689	0	1	10164	2	0	next	other	0
+RW	66	Picture	movementOpen	2478853	153	1	39989	2	0	next	other	0
+RW	66	Response	6	2482307	3607	2
+RW	66	Response	4	2508087	29387	1
+RW	67	Picture	loadClose	2518842	0	1	71315	2	0	next	other	0
+RW	67	Response	1	2589987	71145	1
+RW	68	Picture	view	2590157	0	1	10164	2	0	next	other	0
+RW	69	Picture	movementClosed	2600321	153	1	39990	2	0	next	other	0
+RW	69	Response	6	2603535	3367	1
+RW	70	Picture	reacqDelayOpen	2640311	0	1	34158	2	0	next	other	0
+RW	70	Response	4	2674354	34043	1
+RW	71	Picture	loadClose	2674469	0	1	76813	2	0	next	other	0
+RW	71	Response	1	2751264	76795	1
+RW	72	Picture	view	2751282	0	1	10164	2	0	next	other	0
+RW	73	Picture	movementOpen	2761446	153	1	39989	3	0	next	other	0
+RW	73	Response	6	2766082	4789	1
+RW	73	Response	4	2801261	39968	1
+RW	74	Picture	loadClose	2801435	0	2	117803	3	0	next	other	0
+RW	74	Response	1	2919100	117665	1
+RW	75	Picture	view	2919238	0	1	10164	2	0	next	other	0
+RW	76	Picture	movementClosed	2929402	153	1	39990	2	0	next	other	0
+RW	76	Response	6	2932819	3570	1
+RW	77	Picture	reacqDelayOpen	2969392	0	1	9997	2	0	next	other	0
+RW	77	Response	4	2979217	9825	2
+RW	78	Picture	loadClose	2979389	0	1	52320	2	0	next	other	0
+RW	78	Response	1	3031578	52189	1
+RW	79	Picture	view	3031709	0	1	10164	2	0	next	other	0
+RW	80	Picture	movementOpen	3041873	152	1	39989	2	0	next	other	0
+RW	80	Response	6	3044696	2975	2
+RW	80	Response	4	3070546	28825	1
+RW	81	Picture	loadClose	3081862	0	1	89977	2	0	next	other	0
+RW	81	Response	1	3171735	89873	1
+RW	82	Picture	view	3171839	0	1	10164	2	0	next	other	0
+RW	83	Picture	movementClosed	3182003	156	1	39989	2	0	next	other	0
+RW	83	Response	6	3184504	2657	1
+RW	84	Picture	reacqDelayOpen	3221992	0	1	10664	2	0	next	other	0
+RW	84	Response	4	3232602	10610	2
+RW	85	Picture	endBlock	3232656	0	1	30159	2	0	next	other	0
+RW	86	Picture	begin	3262815	0	1	1481780	3	0	next	other	0
+RW	86	Response	6	3326991	64176	1
+RW	86	Response	4	4727053	1464238	1
+RW	86	Response	1	4744504	1481689	1
+RW	87	Picture	loadClose	4744595	0	2	59818	3	0	next	other	0
+RW	87	Response	1	4804343	59748	1
+RW	88	Picture	view	4804413	0	1	10164	2	0	next	other	0
+RW	89	Picture	movementOpen	4814577	153	1	39990	2	0	next	other	0
+RW	89	Response	6	4817281	2857	2
+RW	89	Response	4	4850723	36299	1
+RW	90	Picture	loadClose	4854567	0	1	76813	2	0	next	other	0
+RW	90	Response	1	4931220	76653	2
+RW	91	Picture	view	4931380	0	1	10164	2	0	next	other	0
+RW	92	Picture	movementClosed	4941544	153	1	39990	2	0	next	other	0
+RW	92	Response	6	4944498	3107	2
+RW	93	Picture	reacqDelayOpen	4981534	0	1	328414	2	0	next	other	0
+RW	93	Response	4	5309842	328308	1
+RW	94	Picture	loadClose	5309948	0	1	65650	2	0	next	other	0
+RW	94	Response	1	5375532	65584	1
+RW	95	Picture	view	5375598	0	1	10164	2	0	next	other	0
+RW	96	Picture	movementClosed	5385762	153	1	39989	2	0	next	other	0
+RW	96	Response	6	5388860	3251	1
+RW	97	Picture	reacqDelayOpen	5425751	0	1	74814	2	0	next	other	0
+RW	97	Response	4	5500538	74787	1
+RW	98	Picture	loadClose	5500565	0	1	5665	2	0	next	other	0
+RW	98	Response	6	5506118	5553	1
+RW	99	Picture	wrongHand	5506230	111	1	48321	2	0	next	false_alarm	186
+RW	99	Response	4	5554506	48387	2
+RW	100	Picture	loadClose	5554551	0	1	259599	2	0	next	other	0
+RW	100	Response	1	5814083	259532	1
+RW	101	Picture	view	5814150	0	1	10164	2	0	next	other	0
+RW	102	Picture	movementClosed	5824314	153	1	39990	2	0	next	other	0
+RW	102	Response	6	5827611	3450	2
+RW	103	Picture	reacqDelayOpen	5864304	0	1	61136	183	0	next	other	0
+RW	103	Response	4	5925429	61125	2
+RW	104	Picture	loadClose	5925440	0	182	80827	183	0	next	other	0
+RW	104	Response	1	6006239	80799	1
+RW	105	Picture	view	6006267	0	1	10164	2	0	next	other	0
+RW	106	Picture	movementOpen	6016431	153	1	39989	2	0	next	other	0
+RW	106	Response	6	6019147	2869	2
+RW	106	Response	4	6045127	28849	1
+RW	107	Picture	loadClose	6056420	0	1	1366477	2	0	next	other	0
+RW	107	Response	6	7422802	1366382	1
+RW	108	Picture	wrongHand	7422897	93	1	847613	2	0	next	false_alarm	203
+RW	108	Response	4	8270483	847679	1
+RW	109	Picture	loadClose	8270510	0	1	83145	2	0	next	other	0
+RW	109	Response	1	8353553	83043	1
+RW	110	Picture	view	8353655	0	1	10164	2	0	next	other	0
+RW	111	Picture	movementOpen	8363819	156	1	39989	2	0	next	other	0
+RW	111	Response	6	8368001	4338	1
+RW	112	Picture	reacqDelayAlreadyOpen	8403808	0	1	10498	2	0	next	other	0
+RW	112	Response	4	8414200	10392	1
+RW	113	Picture	loadClose	8414306	0	1	68482	2	0	next	other	0
+RW	113	Response	1	8482669	68363	2
+RW	114	Picture	view	8482788	0	1	10164	2	0	next	other	0
+RW	115	Picture	movementOpen	8492952	153	1	39989	2	0	next	other	0
+RW	115	Response	6	8495249	2450	1
+RW	115	Response	4	8526638	33839	1
+RW	116	Picture	loadClose	8532941	0	1	68149	2	0	next	other	0
+RW	116	Response	1	8601070	68129	1
+RW	117	Picture	view	8601090	0	1	10164	2	0	next	other	0
+RW	118	Picture	movementClosed	8611254	153	1	39990	2	0	next	other	0
+RW	118	Response	6	8613666	2565	1
+RW	119	Picture	reacqDelayOpen	8651244	0	1	21494	2	0	next	other	0
+RW	119	Response	4	8672565	21321	1
+RW	120	Picture	loadClose	8672738	0	1	315585	2	0	next	other	0
+RW	120	Response	1	8988260	315522	1
+RW	121	Picture	view	8988323	0	1	10164	2	0	next	other	0
+RW	122	Picture	movementOpen	8998487	153	1	39989	2	0	next	other	0
+RW	122	Response	6	9001088	2754	2
+RW	122	Response	4	9030448	32114	1
+RW	123	Picture	loadClose	9038476	0	1	65816	2	0	next	other	0
+RW	123	Response	1	9104258	65782	1
+RW	124	Picture	view	9104292	0	1	10164	3	0	next	other	0
+RW	125	Picture	movementClosed	9114456	153	2	39990	3	0	next	other	0
+RW	125	Response	6	9117846	3543	2
+RW	126	Picture	reacqDelayOpen	9154446	0	1	5998	2	0	next	other	0
+RW	126	Response	4	9160406	5960	1
+RW	127	Picture	loadClose	9160444	0	1	64817	2	0	next	other	0
+RW	127	Response	1	9225215	64771	2
+RW	128	Picture	view	9225261	0	1	10164	2	0	next	other	0
+RW	129	Picture	movementClosed	9235425	153	1	39989	3	0	next	other	0
+RW	129	Response	6	9239173	3901	2
+RW	130	Picture	reacqDelayOpen	9275414	0	2	3333	3	0	next	other	0
+RW	130	Response	4	9278633	3219	1
+RW	131	Picture	loadClose	9278747	0	1	54652	2	0	next	other	0
+RW	131	Response	1	9333373	54626	1
+RW	132	Picture	view	9333399	0	1	10164	3	0	next	other	0
+RW	133	Picture	movementClosed	9343563	156	2	39990	3	0	next	other	0
+RW	133	Response	6	9346812	3405	1
+RW	134	Picture	reacqDelayOpen	9383553	0	1	9331	2	0	next	other	0
+RW	134	Response	4	9392721	9168	1
+RW	135	Picture	loadClose	9392884	0	1	50153	2	0	next	other	0
+RW	135	Response	1	9442970	50086	2
+RW	136	Picture	view	9443037	0	1	10164	3	0	next	other	0
+RW	137	Picture	movementClosed	9453201	152	2	39990	3	0	next	other	0
+RW	137	Response	6	9455650	2601	1
+RW	138	Picture	reacqDelayOpen	9493191	0	1	97475	2	0	next	other	0
+RW	138	Response	4	9590576	97385	2
+RW	139	Picture	loadClose	9590666	0	1	42322	2	0	next	other	0
+RW	139	Response	1	9632887	42221	1
+RW	140	Picture	view	9632988	0	1	10164	2	0	next	other	0
+RW	141	Picture	movementOpen	9643152	152	1	39989	3	0	next	other	0
+RW	141	Response	6	9646416	3416	1
+RW	141	Response	4	9676355	33355	1
+RW	142	Picture	loadClose	9683141	0	2	57319	3	0	next	other	0
+RW	142	Response	1	9740405	57264	1
+RW	143	Picture	view	9740460	0	1	10164	2	0	next	other	0
+RW	144	Picture	movementOpen	9750624	153	1	39989	3	0	next	other	0
+RW	144	Response	6	9753894	3423	1
+RW	144	Response	4	9783103	32632	1
+RW	145	Picture	loadClose	9790613	0	2	58319	3	0	next	other	0
+RW	145	Response	1	9848883	58270	1
+RW	146	Picture	view	9848932	0	1	10164	2	0	next	other	0
+RW	147	Picture	movementOpen	9859096	157	1	39989	2	0	next	other	0
+RW	147	Response	6	9862282	3343	1
+RW	147	Response	4	9889081	30142	1
+RW	148	Picture	loadClose	9899085	0	1	57152	2	0	next	other	0
+RW	148	Response	1	9956081	56996	1
+RW	149	Picture	view	9956237	0	1	10164	2	0	next	other	0
+RW	150	Picture	movementClosed	9966401	156	1	39990	2	0	next	other	0
+RW	150	Response	6	9969349	3104	2
+RW	151	Picture	reacqDelayOpen	10006391	0	1	8997	3	0	next	other	0
+RW	151	Response	4	10015270	8879	1
+RW	152	Picture	loadClose	10015388	0	2	53986	3	0	next	other	0
+RW	152	Response	1	10069199	53811	1
+RW	153	Picture	view	10069374	0	1	10164	2	0	next	other	0
+RW	154	Picture	movementClosed	10079538	153	1	39990	2	0	next	other	0
+RW	154	Response	6	10083407	4022	1
+RW	155	Picture	reacqDelayOpen	10119528	0	1	3999	2	0	next	other	0
+RW	155	Response	4	10123346	3818	2
+RW	156	Picture	loadClose	10123527	0	1	59984	2	0	next	other	0
+RW	156	Response	1	10183436	59909	1
+RW	157	Picture	view	10183511	0	1	10164	2	0	next	other	0
+RW	158	Picture	movementOpen	10193675	157	1	39990	2	0	next	other	0
+RW	158	Response	6	10197134	3616	2
+RW	158	Response	4	10230764	37246	1
+RW	159	Picture	loadClose	10233665	0	1	47820	3	0	next	other	0
+RW	159	Response	1	10281355	47690	1
+RW	160	Picture	view	10281485	0	2	10165	3	0	next	other	0
+RW	161	Picture	movementOpen	10291650	154	1	39989	2	0	next	other	0
+RW	161	Response	6	10294273	2777	1
+RW	161	Response	4	10330392	38896	1
+RW	162	Picture	loadClose	10331639	0	1	123801	2	0	next	other	0
+RW	162	Response	1	10455271	123632	1
+RW	163	Picture	view	10455440	0	1	6832	2	0	next	other	0
+RW	163	Response	6	10462130	6690	1
+RW	164	Picture	wrongHand	10462272	141	1	40156	2	0	next	false_alarm	307
+RW	164	Response	4	10502329	40198	1
+RW	165	Picture	loadClose	10502428	0	1	65150	2	0	next	other	0
+RW	165	Response	1	10567429	65001	1
+RW	166	Picture	view	10567578	0	1	10164	2	0	next	other	0
+RW	167	Picture	movementClosed	10577742	157	1	39989	2	0	next	other	0
+RW	167	Response	6	10580907	3322	2
+RW	168	Picture	reacqDelayOpen	10617731	0	1	3499	2	0	next	other	0
+RW	168	Response	4	10621126	3395	2
+RW	169	Picture	endSession	10621230	0	1	36233	2	0	next	other	0

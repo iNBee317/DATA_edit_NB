@@ -1,0 +1,48 @@
+EPOCHS:
+1) Load period.  Instruct experimenter, wait for spacebar (ITI).  Eyes closed.
+2) Go cue.  Eyes open.
+3) Start of movement.  Trigger by key release.  Eyes open.  Start collection. 5s
+
+12 trial types: 3 block sizes, 2 vision states (on/off), 2 hands
+
+3	press LH rest key
+4	press RH rest key
+5	lift LH rest key
+6	lift RH rest key
+10	start block: LH
+11	start block: RH
+12	start block: visible hand
+13	start block: hidden hand
+20	load epoch (includes signal to close eyes) 
+21	load epoch: no eye-close signal (already closed)
+30	error: lifted during loading/checking
+31	error: no lift in 3s after stimulus
+32	error: lifted wrong hand during move
+33	error: lifted wrong hand during stimulus present
+40	preview epoch
+41	stimulus (ready) epoch
+50	wait-for-reacq epoch
+61	move epoch: 1cm cube = TRIGGER
+62	move epoch: 2cm cube = TRIGGER
+63	move epoch: 4cm cube = TRIGGER
+70	wait for optotrak to reset
+80	trial finished OK (will occur after correct 5 or 6)
+90	confirmation epoch: experimenter confirmed
+91	confirmation epoch: experimenter denied
+92	confirmation epoch: experimenter aborted
+93	confirmation epoch: auto-denial because trial ended before experimenter could respond
+94	confirmation epoch: auto-accept because no usable prior trial
+190	no confirmation epoch needed: experimenter already confirmed
+191	no confirmation epoch needed: experimenter already denied
+192	no confirmation epoch needed: experimenter already aborted
+100	end of block
+101	end of experiment
+103	end due to abort
+20*	counterbalance num
+30*	extra trial num
+4**	we had this many extra trials this block
+50X	Which hand affected?  (0 = left, 1 = right)
+8XXX	Pulse number X.
+9XYY	start trial YY in block X (i.e., pulse number)
+100XX	Subject number
+1YYYY	Movement duration

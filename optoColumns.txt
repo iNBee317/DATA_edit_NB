@@ -1,0 +1,22 @@
+A: optotrak pulse number
+B-D: Marker 1 XYZ - thumb #1
+G-I: Marker 2 XYZ - thumb #2
+L-N: Marker 3 XYZ - index #1
+Q-S: Marker 4 XYZ - index #2
+V-X: Marker 5 XYZ - hand #1
+AA-AC: Marker 6 XYZ - hand #2
+AF-AH: Marker 7 XYZ - goal #1
+AK-AM: Marker 8 XYZ - goal #2
+AP-AR: Marker 9 XYZ - bowl #1
+AU-AW: Marker 10 XYZ - bowl #2
+52-54: Marker 11 XYZ - index middle phalange #1
+57-59: Marker 12 XYZ - index middle phalange #2
+
+Not sure what's in columns 5-6, 10-11, etc; but I found these answers via much testing a long time ago.
+
+If a value is 100000, that means "missing value"
+
+The XYZ coordinates are only defined once per subject, so they are in absolute rather than hand-centered coordinates.
+X: forward/back. +X direction is forward (toward the cube) with the right hand, whereas -X is forward with the left hand.
+Y: left/right. +Y direction is always toward the camera, and thus always medial.
+Z: up/down. +Z is always upward.
