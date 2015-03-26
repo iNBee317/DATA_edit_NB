@@ -21,7 +21,7 @@ EPOCHS:
 33	error: lifted wrong hand during stimulus present
 40	preview epoch
 41	stimulus (ready) epoch
-50	wait-for-reacq epoch
+50	wait-for-reach epoch
 61	move epoch: 1cm cube = TRIGGER
 62	move epoch: 2cm cube = TRIGGER
 63	move epoch: 4cm cube = TRIGGER

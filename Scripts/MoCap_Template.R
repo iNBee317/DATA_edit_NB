@@ -1,6 +1,6 @@
 #----Packages Required (No Entry Required)----
 library(zoo)
-setwd("/Volumes/Storage/freylab_projects/exp62_transplant/62-02_optotrak/DATA_edit_N_B/Scipts")
+setwd("/Volumes/Storage/freylab_projects/exp62_transplant/62-02_optotrak/DATA_edit_N_B/Scripts")
 source("MoCapFunctions.R")
 ##Reads in .txt file for a subject and creates two data
 ##frames. master is complete with columns names.
@@ -31,11 +31,49 @@ optoLog$translation=as.character(optoLog$translation)
 y=c(3,4,5,6,10,11,12,13,20,21,30,31,32,33,40,41,50,61,62,63,70,80,90,91,92,93,94,100)#list of all code values
 z=c("LH press","RH press","LH lift", "RH lift", "LH Block Start","RH Block Start","Visible Block","Hidden Block","load epoch: (includes signal to close eyes)","load epoch: no-eye close signal","ERROR: lifted during loading","ERROR: no lift within 3 seconds after onset","ERROR: wrong hand lifted on move","ERROR: wrong hand lifted during swtimulus present","preview epoch", "stimulus (ready) epoch","wait for reach epoch","MOVE: 1cm cube","MOVE: 2cm cube","MOVE: 4cm cube","wait for optotrak to reset","trial finished ok","CONFIRMATION: confirmed","CONFIRMATION: denied","CONFIRMATION: aborted","CONFIRMATION: trial ended before experimenter could respond","CONFIRMATION: auto-accept","BLOCK END")#interpretation of that value
 #y and z should be the same length
-for (a in 1:length(y)){
-  codeTranslate(y,z,x)
+for (i in 1:x){
+if(optoLog$V1[i]==10){
+optoLog$translation[i] <- "LH Block Start"}
+if(optoLog$V1[i]==11){
+optoLog$translation[i] <- "RH Block Start"}
+if(optoLog$V1[i]==12){
+optoLog$translation[i] <- "Visible Block Start"}
+if(optoLog$V1[i]==13){
+optoLog$translation[i] <- "Hidden Block Start"}
+if(optoLog$V1[i]==30){
+optoLog$translation[i] <- "ERROR: lifted during loading/checking"}
+if(optoLog$V1[i]==31){
+optoLog$translation[i] <- "ERROR: no lift in 3s after stimulus"}
+if(optoLog$V1[i]==32){
+optoLog$translation[i] <- "ERROR: lifted wrong hand during move"}
+if(optoLog$V1[i]==33){
+optoLog$translation[i] <- "ERROR: lifted wrong hand during stimulus presentation"}
+if(optoLog$V1[i]==61){
+optoLog$translation[i] <- "move epoch: 1cm cube"}
+if(optoLog$V1[i]==62){
+optoLog$translation[i] <- "move epoch: 2cm cube"}
+if(optoLog$V1[i]==63){
+optoLog$translation[i] <- "move epoch: 3cm cube"}
+if(optoLog$V1[i]==80){
+optoLog$translation[i] <- "trial finished okay"}
+if(optoLog$V1[i]==90){
+optoLog$translation[i] <- "experimenter confirmed"}
+if(optoLog$V1[i]==91){
+optoLog$translation[i] <- "experimenter denied"}
+if(optoLog$V1[i]==92){
+optoLog$translation[i] <- "experimenter aborted"}
+if(optoLog$V1[i]==93){
+optoLog$translation[i] <- "auto denial"}
+if(optoLog$V1[i]==91){
+optoLog$translation[i] <- "experimenter denied"}
+if(optoLog$V1[i]==100){
+optoLog$translation[i] <- "end of block"}
 }
 
-optoReport=optoLog[optoLog$V1 == 10|optoLog$V1 == 11|optoLog$V1 == 12|optoLog$V1 == 13|optoLog$V1 == 30|optoLog$V1 == 31|optoLog$V1 == 32|optoLog$V1 == 33|optoLog$V1 == 61|optoLog$V1 == 62|optoLog$V1 == 63|optoLog$V1 == 90|optoLog$V1 == 91|optoLog$V1 == 92|optoLog$V1 == 93|optoLog$V1 == 94|optoLog$V1 == 100|optoLog$V1 == 101|optoLog$V1 == 80,]
+
+optoReport=optoLog[optoLog$V1 == 10|optoLog$V1 == 11|optoLog$V1 == 12|optoLog$V1 == 13|optoLog$V1 == 30|optoLog$V1 == 31|optoLog$V1 == 32|optoLog$V1 == 33|optoLog$V1 == 61|optoLog$V1 == 62|optoLog$V1 == 63|optoLog$V1 == 90|optoLog$V1 == 91|optoLog$V1 == 92|optoLog$V1 == 93|optoLog$V1 == 94|optoLog$V1 == 100|optoLog$V1 == 101|optoLog$V1 == 80|optoLog$V1 == ,]
+optoReport=optoLog[optoLog$V1 !=  ,]
+
 
 
 #interpolate the missing values based on
