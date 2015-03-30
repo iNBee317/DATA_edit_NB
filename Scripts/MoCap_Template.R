@@ -8,10 +8,10 @@ source("MoCapFunctions.R")
 
 #----Setup-----
 #Enter the participant number... "03_32", etc. Make sure you have set your working directory to the participants folder in the InProgress directory
-optoimport("03_25")
+optoimport("03_24")
 
 #creates a Hz vector and add it to the data frame for interpolation purposes
-Hz=rep(c(1:500),102)
+Hz=rep(c(1:500),129)
 keepers=data.frame(Hz,keepers)
 rm(Hz)
 
@@ -20,12 +20,16 @@ clean=keepers
 clean[clean==100000]<-"NA"
 
 #import presentation output log to determine good trials
-optoLog=read.table("03_25_optoReplant.txt",header=F,sep="")
+optoLog=read.table("03_24_optoReplant.txt",header=F,sep="")
 x=length(optoLog$V1)
 translation=c(rep(0,x))
-optoLog=cbind(translation,optoLog)
+TimeSec=c(rep(0,x))
+TimeAbsolute=c(rep(0,x))
+optoLog=cbind(translation,optoLog,TimeSec,TimeAbsolute)
 optoLog$V1 = factor(optoLog$V1)
 optoLog$translation=as.character(optoLog$translation)
+
+optoLog$TimeSec=optoLog$V2/1000
 
 
 y=c(3,4,5,6,10,11,12,13,20,21,30,31,32,33,40,41,50,61,62,63,70,80,90,91,92,93,94,100)#list of all code values
@@ -74,14 +78,22 @@ optoLog$translation[i] <- "end of block"}
 optoReport=optoLog[optoLog$V1 == 10|optoLog$V1 == 11|optoLog$V1 == 12|optoLog$V1 == 13|optoLog$V1 == 30|optoLog$V1 == 31|optoLog$V1 == 32|optoLog$V1 == 33|optoLog$V1 == 61|optoLog$V1 == 62|optoLog$V1 == 63|optoLog$V1 == 90|optoLog$V1 == 91|optoLog$V1 == 92|optoLog$V1 == 93|optoLog$V1 == 94|optoLog$V1 == 100|optoLog$V1 == 101|optoLog$V1 == 80|optoLog$V1 == ,]
 optoReport=optoLog[optoLog$V1 !=  ,]
 
+##remove bad trials as determined by notes and presentation output
+bad=c(1:7,31) #trials to remove
+x=length(bad)
+level3=clean
+for (i in 1:x){
+  level3=level3[level3$optotrak.pulse.number!=bad[i],] 
+}
 
 
 #interpolate the missing values based on
 #Hz for all trials, outputs a data frame called inter
-inter=clean
-N=length(clean$optotrak.pulse.number)/500
-S=1   #the trial to start interpolating for
-M=500 #sets the max number of consecutive NA's to interpolate values for
+inter=level3
+inter=inter[,c(1,2,3,4,5,9,10,11,15,16,17,21,22,23)]
+inter$optotrak.pulse.number=factor(inter$optotrak.pulse.number)
+levels(inter$optotrak.pulse.number)
+length(levels(inter$optotrak.pulse.number))
 
 #----Convert coordinate data into numeric for interpolation----
 inter$x1=as.numeric(inter$x1)
@@ -117,74 +129,82 @@ inter$z4=as.numeric(inter$z4)
 inter$z5=as.numeric(inter$z5)
 inter$z6=as.numeric(inter$z6)
 inter$z7=as.numeric(inter$z7)
-inter$z8=as.numeric(inter$z8)å`
+inter$z8=as.numeric(inter$z8)
 inter$z9=as.numeric(inter$z9)
 inter$z10=as.numeric(inter$z10)
 inter$z11=as.numeric(inter$z11)
 inter$z12=as.numeric(inter$z12)
 
+#settings for interpolation
+N=129 #where to iter to
+S=32   #the trial to start interpolating for
+M=500 #sets the max number of consecutive NA's to interpolate values for
+
 #----Interpolate one marker at a time----
 #Will through and error if on any of the runs a marker starts out missing (NA).
 for (i in S:N){
-  inter$x1[inter$optotrak.pulse.number==i] <- na.approx(inter$x1[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$y1[inter$optotrak.pulse.number==i] <- na.approx(inter$y1[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$z1[inter$optotrak.pulse.number==i] <- na.approx(inter$z1[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
+  inter$x1[inter$optotrak.pulse.number==i] <- na.approx(inter$x1[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$y1[inter$optotrak.pulse.number==i] <- na.approx(inter$y1[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$z1[inter$optotrak.pulse.number==i] <- na.approx(inter$z1[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
 }
 for (i in S:N){
-  inter$x2[inter$optotrak.pulse.number==i] <- na.approx(inter$x2[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$y2[inter$optotrak.pulse.number==i] <- na.approx(inter$y2[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$z2[inter$optotrak.pulse.number==i] <- na.approx(inter$z2[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
+  inter$x2[inter$optotrak.pulse.number==i] <- na.approx(inter$x2[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$y2[inter$optotrak.pulse.number==i] <- na.approx(inter$y2[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$z2[inter$optotrak.pulse.number==i] <- na.approx(inter$z2[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
 }
 for (i in S:N){
-  inter$x3[inter$optotrak.pulse.number==i] <- na.approx(inter$x3[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$y3[inter$optotrak.pulse.number==i] <- na.approx(inter$y3[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$z3[inter$optotrak.pulse.number==i] <- na.approx(inter$z3[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
+  inter$x3[inter$optotrak.pulse.number==i] <- na.approx(inter$x3[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$y3[inter$optotrak.pulse.number==i] <- na.approx(inter$y3[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$z3[inter$optotrak.pulse.number==i] <- na.approx(inter$z3[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
 }
 for (i in S:N){
-  inter$x4[inter$optotrak.pulse.number==i] <- na.approx(inter$x4[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$y4[inter$optotrak.pulse.number==i] <- na.approx(inter$y4[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$z4[inter$optotrak.pulse.number==i] <- na.approx(inter$z4[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
+  inter$x4[inter$optotrak.pulse.number==i] <- na.approx(inter$x4[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$y4[inter$optotrak.pulse.number==i] <- na.approx(inter$y4[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$z4[inter$optotrak.pulse.number==i] <- na.approx(inter$z4[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
 }
 for (i in S:N){
-  inter$x5[inter$optotrak.pulse.number==i] <- na.approx(inter$x5[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$y5[inter$optotrak.pulse.number==i] <- na.approx(inter$y5[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$z5[inter$optotrak.pulse.number==i] <- na.approx(inter$z5[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
+  inter$x5[inter$optotrak.pulse.number==i] <- na.approx(inter$x5[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$y5[inter$optotrak.pulse.number==i] <- na.approx(inter$y5[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$z5[inter$optotrak.pulse.number==i] <- na.approx(inter$z5[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
 }
 for (i in S:N){
-  inter$x6[inter$optotrak.pulse.number==i] <- na.approx(inter$x6[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$y6[inter$optotrak.pulse.number==i] <- na.approx(inter$y6[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$z6[inter$optotrak.pulse.number==i] <- na.approx(inter$z6[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
+  inter$x6[inter$optotrak.pulse.number==i] <- na.approx(inter$x6[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$y6[inter$optotrak.pulse.number==i] <- na.approx(inter$y6[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$z6[inter$optotrak.pulse.number==i] <- na.approx(inter$z6[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
 }
 for (i in S:N){
-  inter$x7[inter$optotrak.pulse.number==i] <- na.approx(inter$x7[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$y7[inter$optotrak.pulse.number==i] <- na.approx(inter$y7[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$z7[inter$optotrak.pulse.number==i] <- na.approx(inter$z7[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
+  inter$x7[inter$optotrak.pulse.number==i] <- na.approx(inter$x7[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$y7[inter$optotrak.pulse.number==i] <- na.approx(inter$y7[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$z7[inter$optotrak.pulse.number==i] <- na.approx(inter$z7[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
 }
 for (i in S:N){
-  inter$x8[inter$optotrak.pulse.number==i] <- na.approx(inter$x8[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$y8[inter$optotrak.pulse.number==i] <- na.approx(inter$y8[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$z8[inter$optotrak.pulse.number==i] <- na.approx(inter$z8[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
+  inter$x8[inter$optotrak.pulse.number==i] <- na.approx(inter$x8[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$y8[inter$optotrak.pulse.number==i] <- na.approx(inter$y8[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$z8[inter$optotrak.pulse.number==i] <- na.approx(inter$z8[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
 }
 for (i in S:N){
-  inter$x9[inter$optotrak.pulse.number==i] <- na.approx(inter$x9[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE, maxgap=M)
-  inter$y9[inter$optotrak.pulse.number==i] <- na.approx(inter$y9[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE, maxgap=M)
-  inter$z9[inter$optotrak.pulse.number==i] <- na.approx(inter$z9[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE, maxgap=M
+  inter$x9[inter$optotrak.pulse.number==i] <- na.approx(inter$x9[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE, maxgap=M)
+  inter$y9[inter$optotrak.pulse.number==i] <- na.approx(inter$y9[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE, maxgap=M)
+  inter$z9[inter$optotrak.pulse.number==i] <- na.approx(inter$z9[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE, maxgap=M)
 }
 for (i in S:N){
-  inter$x10[inter$optotrak.pulse.number==i] <- na.approx(inter$x10[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE, maxgap=M)
-  inter$y10[inter$optotrak.pulse.number==i] <- na.approx(inter$y10[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE, maxgap=M)
-  inter$z10[inter$optotrak.pulse.number==i] <- na.approx(inter$z10[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE, maxgap=M)
+  inter$x10[inter$optotrak.pulse.number==i] <- na.approx(inter$x10[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE, maxgap=M)
+  inter$y10[inter$optotrak.pulse.number==i] <- na.approx(inter$y10[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE, maxgap=M)
+  inter$z10[inter$optotrak.pulse.number==i] <- na.approx(inter$z10[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE, maxgap=M)
 }
 for (i in S:N){
-  inter$x11[inter$optotrak.pulse.number==i] <- na.approx(inter$x11[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE,maxgap=M)
-  inter$y11[inter$optotrak.pulse.number==i] <- na.approx(inter$y11[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE, maxgap=M)
-  inter$z11[inter$optotrak.pulse.number==i] <- na.approx(inter$z11[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE, maxgap=M)
+  inter$x11[inter$optotrak.pulse.number==i] <- na.approx(inter$x11[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE,maxgap=M)
+  inter$y11[inter$optotrak.pulse.number==i] <- na.approx(inter$y11[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE, maxgap=M)
+  inter$z11[inter$optotrak.pulse.number==i] <- na.approx(inter$z11[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE, maxgap=M)
 }
 for (i in S:N){
-  inter$x12[inter$optotrak.pulse.number==i] <- na.approx(inter$x12[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE, maxgap=M)
-  inter$y12[inter$optotrak.pulse.number==i] <- na.approx(inter$y12[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE, maxgap=M)
-  inter$z12[inter$optotrak.pulse.number==i] <- na.approx(inter$z12[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = FALSE, maxgap=M)
+  inter$x12[inter$optotrak.pulse.number==i] <- na.approx(inter$x12[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE, maxgap=M)
+  inter$y12[inter$optotrak.pulse.number==i] <- na.approx(inter$y12[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE, maxgap=M)
+  inter$z12[inter$optotrak.pulse.number==i] <- na.approx(inter$z12[inter$optotrak.pulse.number==i], inter$Hz[inter$optotrak.pulse.number==i], na.rm = TRUE, maxgap=M)
 }
+
+##create trial number column
+
 
 #----PostProcessing----
 ##creates .csv files for each trial##
@@ -197,14 +217,13 @@ optotrial=function(){
   }
 }
 
-##removes bad trials for testing
-clean=clean[clean$optotrak.pulse.number!= 1,]
-clean=clean[clean$optotrak.pulse.number!= 2,]
 
 ##output for testing purposes
 write.csv(keepers,file="keepers.csv",row.names=F)
 write.csv(clean,file="clean.csv",row.names=F)
 write.csv(inter,file="inter.csv",row.names=F)
+write.csv(optoLog,file="optoLog.csv",row.names=F)
+
 
 #identifying runs of NA
 rlexyz=rle(clean$x1[clean$optotrak.pulse.number==1])
