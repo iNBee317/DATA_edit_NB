@@ -6,12 +6,18 @@ source("MoCapFunctions.R")
 ##frames. master is complete with columns names.
 #keepers removes the na columns.
 
+BlockSize=function(x,y){
+  zz=x:y
+  print(length(zz))
+  
+}
+
 #----Setup-----
 #Enter the participant number... "03_32", etc. Make sure you have set your working directory to the participants folder in the InProgress directory
-optoimport("03_24")
+optoimport("03_31")
 
 #creates a Hz vector and add it to the data frame for interpolation purposes
-Hz=rep(c(1:500),129)
+Hz=rep(c(1:500),99)
 keepers=data.frame(Hz,keepers)
 rm(Hz)
 
@@ -20,7 +26,7 @@ clean=keepers
 clean[clean==100000]<-"NA"
 
 #import presentation output log to determine good trials
-optoLog=read.table("03_24_optoReplant.txt",header=F,sep="")
+optoLog=read.table("03_31_optoReplant.txt",header=F,sep="")
 x=length(optoLog$V1)
 translation=c(rep(0,x))
 TimeSec=c(rep(0,x))
@@ -75,8 +81,6 @@ optoLog$translation[i] <- "end of block"}
 }
 
 
-optoReport=optoLog[optoLog$V1 == 10|optoLog$V1 == 11|optoLog$V1 == 12|optoLog$V1 == 13|optoLog$V1 == 30|optoLog$V1 == 31|optoLog$V1 == 32|optoLog$V1 == 33|optoLog$V1 == 61|optoLog$V1 == 62|optoLog$V1 == 63|optoLog$V1 == 90|optoLog$V1 == 91|optoLog$V1 == 92|optoLog$V1 == 93|optoLog$V1 == 94|optoLog$V1 == 100|optoLog$V1 == 101|optoLog$V1 == 80|optoLog$V1 == ,]
-optoReport=optoLog[optoLog$V1 !=  ,]
 
 ##remove bad trials as determined by notes and presentation output
 bad=c(1:7,31) #trials to remove
@@ -135,9 +139,37 @@ inter$z10=as.numeric(inter$z10)
 inter$z11=as.numeric(inter$z11)
 inter$z12=as.numeric(inter$z12)
 
+x=length(inter$optotrak.pulse.number)
+vision=c(rep("?",x))
+hand=c(rep("?",x))
+blocksize=c(rep("?",x))
+block=c(rep("?",x))
+inter=data.frame(inter,vision,hand,blocksize,block)
+inter$vision=as.factor(inter$vision)
+levels(inter$vision)=c("?","visible","hidden")
+levels(inter$hand)=c("?","left","right")
+levels(inter$blocksize)=c("?","2cm","1cm","3cm")
+levels(inter$block)=c("?","Block1","Block2","Block3","Block4")
+
+inter$block[1:27]="Block1"
+inter$block[28:51]="Block2"
+inter$block[52:75]="Block3"
+inter$block[76:99]="Block4"
+
+inter$vision[inter$block=="Block1"]="visible"
+inter$vision[inter$block=="Block2"]="hidden"
+inter$vision[inter$block=="Block3"]="hidden"
+inter$vision[inter$block=="Block4"]="visible"
+
+inter$hand[inter$block=="Block1"]="left"
+inter$hand[inter$block=="Block2"]="left"
+inter$hand[inter$block=="Block3"]="right"
+inter$hand[inter$block=="Block4"]="right"
+
+
 #settings for interpolation
-N=129 #where to iter to
-S=32   #the trial to start interpolating for
+N=99 #where to iter to
+S=1  #the trial to start interpolating for
 M=500 #sets the max number of consecutive NA's to interpolate values for
 
 #----Interpolate one marker at a time----
@@ -204,7 +236,12 @@ for (i in S:N){
 }
 
 ##create trial number column
+distance1=c(rep("?",x))
+for i in 1:x
+distance1[i]=
 
+
+plot(inter$x1[inter$optotrak.pulse.number==8])
 
 #----PostProcessing----
 ##creates .csv files for each trial##
