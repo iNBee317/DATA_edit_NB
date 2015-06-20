@@ -1,6 +1,8 @@
 ##Reads in .txt file for a subject and creates two data
 ##frames. master is complete with columns names.
 #keepers removes the na columns.
+
+setwd("~/Documents/Opto_data/InProgress/03_35")
 optoimport=function(name){
   master=read.table(paste(name,".txt",sep=""),header=F,sep="")
   newnames=c("optotrak.pulse.number",paste(c("x","y","z","na","naa"),rep(1:12,each=5),sep=""))
