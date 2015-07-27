@@ -7,3 +7,10 @@ You will need these files:
 -the presentation log output file. (.../dataOptoPresentation/03_25?03_25_optoReplant.txt)
 -the codes to translate the presentation log output. (.../Presentation/opto_codes.txt)
 
+
+convert 10,000 to NA
+
+Interpolate missing values
+
+create a vector for the distance between consecutive points at each marker
+
