@@ -104,10 +104,86 @@ analyze=cbind(analyze,dd.index.thumb,v.index.thumb)
 analyze$v.index.thumb=sqrt((analyze$d.index.thumb-analyze$dd.index.thumb)^2)/.002
 rm(length,)
 
+plot(analyze$v.index.thumb[analyze$optotrak.pulse.number==2],col='green')
 
-plot(analyze$d.index.thumb[analyze$optotrak.pulse.number==3],col='red')
-par(new=TRUE)
-plot(analyze$d5[analyze$optotrak.pulse.number==8],col='blue',ylim=c(0,4000))
+
+num=77
+
+abc.v1=c(rep(0,N))
+for(i in 1:N){
+d=analyze[analyze$v1 > 1000 & analyze$optotrak.pulse.number==i,]
+q=d$Hz[1]
+x=analyze[analyze$v1 < 200 & analyze$optotrak.pulse.number==i & analyze$Hz > q,]
+abc.v1[i]=x$Hz[1]
+}
+
+abc.v1.low=c(rep(0,N))
+for(i in 1:N){
+  x=analyze[analyze$Hz >= abc.v1[i] & analyze$Hz <= abc.v1[i]+50 & analyze$optotrak.pulse.number== i,]
+  z=x$Hz[x$v1==min(x$v1)]
+  abc.v1.low[i]=z[1]
+}
+
+abc.v3=c(rep(0,N))
+for(i in 1:N){
+  d=analyze[analyze$v3 > 500 & analyze$optotrak.pulse.number==i,]
+  q=d$Hz[1]
+  x=analyze[analyze$v3 < 100 & analyze$optotrak.pulse.number==i & analyze$Hz > q,]
+  abc.v3[i]=x$Hz[1]
+}
+
+graphs.full=function(num){
+  plot(analyze$d.index.thumb[analyze$optotrak.pulse.number==num],col='green',main=paste0("trial",i),ylim=c(0,100))
+  par(new=TRUE)
+  plot(analyze$v.index.thumb[analyze$optotrak.pulse.number==num],col='brown',ylim=c(0,1500))
+  par(new=TRUE)
+  plot(analyze$v1[analyze$optotrak.pulse.number==num],col='blue',ylim=c(0,3000))
+  text( x = 100, y = 3000, labels = paste0(abc.v1[num]), cex = 1.5, col = "blue" )
+  abline(v=abc.v1[num],col="blue")
+  par(new=TRUE)
+  plot(analyze$v3[analyze$optotrak.pulse.number==num],col='red',ylim=c(0,3000))
+  text( x = 100, y = 2850, labels = paste0(abc.v3[num]), cex = 1.5, col = "red" )
+  abline(v=abc.v3[num],col="red")
+  text( x = 100, y = 2700, labels = paste0(abc.v1.low[num]), cex = 1.5, col = "orange" )
+  abline(v=abc.v1.low[num],col="orange")
+}
+
+for(i in S:N){
+  graphs.full(i)
+}
+
+
+abc.v1.low[is.na(abc.v1.low)] <- 1
+cut=analyze[analyze$optotrak.pulse.number==1 & analyze$Hz <= abc.v1.low[1],]
+for(i in 2:N){
+x=analyze[analyze$optotrak.pulse.number==i & analyze$Hz <= abc.v1.low[i],]
+cut=rbind(cut,x)
+}
+
+graphs.cut=function(num){
+  plot(cut$d.index.thumb[cut$optotrak.pulse.number==num],col='green',main=paste0("trial",i),ylim=c(0,100))
+  par(new=TRUE)
+  plot(cut$v.index.thumb[cut$optotrak.pulse.number==num],col='brown',ylim=c(0,1500))
+  par(new=TRUE)
+  plot(cut$v1[cut$optotrak.pulse.number==num],col='blue',ylim=c(0,3000))
+  par(new=TRUE)
+  plot(cut$v3[cut$optotrak.pulse.number==num],col='red',ylim=c(0,3000))
+}
+
+for(i in S:N){
+  graphs.cut(i)
+}
+
+
+
+
+
+dis.con=c(rep(0,N))
+for(i in 1:N){
+d=analyze$d.index.thumb[analyze$optotrak.pulse.number==i]
+dis.con[i]=d[abc[i]]
+}
+
 
 
 #import presentation output log to determine good trials
@@ -168,6 +244,8 @@ write.csv(clean,file="clean.csv",row.names=F)
 write.csv(inter,file="inter.csv",row.names=F)
 write.csv(optoLog,file="optoLog.csv",row.names=F)
 write.csv(analyze,file="analyze.csv",row.names=F)
+write.csv(cut,file="cut.csv",row.names=F)
+write.csv(analyze[analyze$optotrak.pulse.number==8,],file="analyze.csv",row.names=F)
 
 
 #identifying runs of NA
