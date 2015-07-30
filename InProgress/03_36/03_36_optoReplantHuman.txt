@@ -1,0 +1,141 @@
+Subject ID: 03_36
+Date and time: 11/11/2014 10:43:45
+
+Block	Trial	Hand	Cube	Vis	Conf	Pulse	RT	Time
+1	1	right	1	hidden	n	1	1290	10:55:56
+1	2	right	1	hidden	Lifted hand (check)
+1	2	right	1	hidden	n	2	825	10:56:15
+1	3	right	2	hidden	Lifted hand (check)
+1	3	right	2	hidden	n	Lifted hand (load)
+1	3	right	2	hidden	n	3	1190	10:57:15
+1	4	right	2	hidden	+	4	1070	10:57:28
+1	5	right	4	hidden	+	5	812	10:57:41
+1	6	right	4	hidden	+	Lifted hand (load)
+1	6	right	4	hidden	n	Lifted hand (load)
+1	6	right	4	hidden	n	Lifted hand (load)
+1	6	right	4	hidden	n	Lifted hand (load)
+1	6	right	4	hidden	n	Lifted hand (load)
+1	6	right	4	hidden	n	Lifted hand (load)
+1	6	right	4	hidden	n	Lifted hand (load)
+1	6	right	4	hidden	n	Lifted hand (load)
+1	6	right	4	hidden	n	Lifted hand (load)
+1	6	right	4	hidden	n	6	1229	10:59:01
+1	7	right	4	hidden	+	7	764	10:59:32
+1	8	right	1	hidden	+	Lifted hand (load)
+1	8	right	1	hidden	n	Lifted hand (load)
+1	8	right	1	hidden	n	8	571	10:59:45
+1	9	right	4	hidden	+	9	711	10:59:57
+1	10	right	1	hidden	+	10	759	11:00:22
+1	11	right	4	hidden	+	11	1354	11:00:36
+1	12	right	1	hidden	+	12	907	11:00:48
+1	13	right	2	hidden	+	Lifted hand (view)
+1	13	right	2	hidden	n	Lifted hand (load)
+1	13	right	2	hidden	n	Lifted hand (load)
+1	13	right	2	hidden	n	13	605	11:01:58
+1	14	right	2	hidden	+	14	704	11:02:12
+1	15	right	1	hidden	+	15	845	11:02:40
+1	16	right	4	hidden	+	16	661	11:03:02
+1	17	right	2	hidden	+	17	864	11:03:23
+1	18	right	1	hidden	+	18	784	11:03:34
+1	19	right	4	hidden	+	Lifted hand (load)
+1	19	right	4	hidden	n	19	875	11:03:47
+1	20	right	2	hidden	+	20	965	11:03:59
+1	21	right	4	hidden	+	21	1475	11:04:12
+1	22	right	2	hidden	+	22	655	11:04:23
+1	23	right	1	hidden	+	23	Lifted wrong hand (movement )
+1	23	right	1	hidden	n	24	658	11:04:54
+1	24	right	2	hidden	+	Lifted hand (load)
+1	24	right	2	hidden	n	25	419	11:05:14
+1	25	right	1	hidden	+	26	721	11:05:25
+1	26	Final check: +
+1	26	right	2	hidden	n	27	731	11:05:38
+2	1	right	4	visible	n	28	686	11:06:31
+2	2	right	4	visible	+	29	860	11:06:39
+2	3	right	4	visible	+	Lifted hand (load)
+2	3	right	4	visible	n	30	482	11:06:50
+2	4	right	2	visible	+	31	748	11:07:00
+2	5	right	1	visible	+	32	602	11:07:10
+2	6	right	2	visible	+	33	833	11:07:22
+2	7	right	1	visible	+	34	967	11:07:34
+2	8	right	2	visible	+	35	972	11:07:43
+2	9	right	1	visible	+	36	1213	11:07:53
+2	10	right	2	visible	+	37	1133	11:08:03
+2	11	right	4	visible	+	Lifted hand (load)
+2	11	right	4	visible	n	38	1024	11:08:17
+2	12	right	1	visible	+	39	1273	11:08:27
+2	13	right	4	visible	+	40	1247	11:08:39
+2	14	right	1	visible	+	41	1522	11:08:51
+2	15	right	1	visible	+	42	1265	11:09:03
+2	16	right	4	visible	+	43	1694	11:09:14
+2	17	right	1	visible	+	44	1431	11:09:27
+2	18	right	4	visible	+	45	1091	11:09:38
+2	19	right	4	visible	+	46	Lifted wrong hand (movement )
+2	19	right	4	visible	n	47	1069	11:10:11
+2	20	right	1	visible	+	Lifted hand (load)
+2	20	right	1	visible	n	48	819	11:10:20
+2	21	right	2	visible	+	49	767	11:10:29
+2	22	right	2	visible	+	50	801	11:10:37
+2	23	right	2	visible	+	51	1740	11:10:47
+2	24	Final check: +
+2	24	right	2	visible	n	52	1076	11:10:58
+3	1	left	2	visible	n	53	395	11:21:13
+3	2	left	1	visible	+	54	897	11:21:25
+3	3	left	4	visible	+	55	712	11:21:35
+3	4	left	4	visible	+	56	Lifted wrong hand (movement )
+3	4	left	4	visible	n	Lifted hand (load)
+3	4	left	4	visible	n	Lifted hand (load)
+3	4	left	4	visible	n	57	694	11:22:02
+3	5	left	1	visible	+	58	809	11:22:11
+3	6	left	4	visible	+	59	616	11:22:21
+3	7	left	2	visible	+	60	1027	11:22:31
+3	8	left	2	visible	+	61	768	11:22:40
+3	9	left	4	visible	+	62	837	11:22:50
+3	10	left	2	visible	+	63	Lifted wrong hand (movement )
+3	10	left	2	visible	n	64	662	11:23:14
+3	11	left	1	visible	+	65	728	11:23:23
+3	12	left	2	visible	+	66	699	11:23:32
+3	13	left	1	visible	+	67	848	11:23:41
+3	14	left	2	visible	+	68	560	11:23:59
+3	15	left	1	visible	+	69	753	11:24:11
+3	16	left	1	visible	+	70	446	11:24:34
+3	17	left	4	visible	+	71	548	11:24:45
+3	18	left	4	visible	+	72	563	11:24:58
+3	19	left	2	visible	+	73	776	11:25:07
+3	20	left	1	visible	+	74	839	11:25:17
+3	21	left	2	visible	+	75	450	11:25:27
+3	22	left	4	visible	+	76	700	11:25:37
+3	23	left	1	visible	+	77	485	11:25:49
+3	24	Final check: +
+3	24	left	4	visible	n	78	Lifted wrong hand (movement )
+3	24	left	4	visible	n	Lifted hand (load)
+3	24	left	4	visible	n	Lifted hand (load)
+3	24	left	4	visible	n	79	Lifted wrong hand (movement )
+3	24	left	4	visible	n	80	648	11:26:22
+4	1	left	2	hidden	n	81	673	11:27:20
+4	2	left	4	hidden	+	82	500	11:27:32
+4	3	left	1	hidden	+	83	692	11:27:45
+4	4	left	2	hidden	+	84	509	11:28:25
+4	5	left	4	hidden	+	85	472	11:28:36
+4	6	left	2	hidden	+	Lifted hand (load)
+4	6	left	2	hidden	n	86	624	11:28:47
+4	7	left	2	hidden	+	87	600	11:29:03
+4	8	left	1	hidden	+	88	358	11:29:14
+4	9	left	4	hidden	+	89	436	11:29:25
+4	10	left	4	hidden	+	90	Lifted wrong hand (movement )
+4	10	left	4	hidden	n	91	551	11:29:51
+4	11	left	1	hidden	+	92	616	11:30:05
+4	12	left	1	hidden	+	93	889	11:30:16
+4	13	left	1	hidden	+	94	510	11:30:28
+4	14	left	2	hidden	+	95	616	11:30:40
+4	15	left	4	hidden	+	96	603	11:30:51
+4	16	left	1	hidden	+	97	740	11:31:03
+4	17	left	4	hidden	+	98	495	11:31:14
+4	18	left	1	hidden	+	99	396	11:31:25
+4	19	left	4	hidden	+	Lifted hand (load)
+4	19	left	4	hidden	n	100	582	11:31:56
+4	20	left	2	hidden	+	101	614	11:32:07
+4	21	left	4	hidden	+	102	546	11:32:17
+4	22	left	2	hidden	+	103	468	11:32:28
+4	23	left	1	hidden	+	104	567	11:32:40
+4	24	Final check: +
+4	24	left	2	hidden	n	105	719	11:32:51
