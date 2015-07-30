@@ -102,12 +102,11 @@ dd.index.thumb=dd.index.thumb[2:length]
 dd.index.thumb=c(dd.index.thumb,0)
 analyze=cbind(analyze,dd.index.thumb,v.index.thumb)
 analyze$v.index.thumb=sqrt((analyze$d.index.thumb-analyze$dd.index.thumb)^2)/.002
-rm(length,)
-
-plot(analyze$v.index.thumb[analyze$optotrak.pulse.number==2],col='green')
+rm(length)
 
 
-num=77
+##DETERMINE CUTOFFS PRIOR TO REMOVING BAD TRIALS
+N=length(levels(analyze$optotrak.pulse.number))
 
 abc.v1=c(rep(0,N))
 for(i in 1:N){
@@ -124,35 +123,6 @@ for(i in 1:N){
   abc.v1.low[i]=z[1]
 }
 
-abc.v3=c(rep(0,N))
-for(i in 1:N){
-  d=analyze[analyze$v3 > 500 & analyze$optotrak.pulse.number==i,]
-  q=d$Hz[1]
-  x=analyze[analyze$v3 < 100 & analyze$optotrak.pulse.number==i & analyze$Hz > q,]
-  abc.v3[i]=x$Hz[1]
-}
-
-graphs.full=function(num){
-  plot(analyze$d.index.thumb[analyze$optotrak.pulse.number==num],col='green',main=paste0("trial",i),ylim=c(0,100))
-  par(new=TRUE)
-  plot(analyze$v.index.thumb[analyze$optotrak.pulse.number==num],col='brown',ylim=c(0,1500))
-  par(new=TRUE)
-  plot(analyze$v1[analyze$optotrak.pulse.number==num],col='blue',ylim=c(0,3000))
-  text( x = 100, y = 3000, labels = paste0(abc.v1[num]), cex = 1.5, col = "blue" )
-  abline(v=abc.v1[num],col="blue")
-  par(new=TRUE)
-  plot(analyze$v3[analyze$optotrak.pulse.number==num],col='red',ylim=c(0,3000))
-  text( x = 100, y = 2850, labels = paste0(abc.v3[num]), cex = 1.5, col = "red" )
-  abline(v=abc.v3[num],col="red")
-  text( x = 100, y = 2700, labels = paste0(abc.v1.low[num]), cex = 1.5, col = "orange" )
-  abline(v=abc.v1.low[num],col="orange")
-}
-
-for(i in S:N){
-  graphs.full(i)
-}
-
-
 abc.v1.low[is.na(abc.v1.low)] <- 1
 cut=analyze[analyze$optotrak.pulse.number==1 & analyze$Hz <= abc.v1.low[1],]
 for(i in 2:N){
@@ -160,14 +130,73 @@ x=analyze[analyze$optotrak.pulse.number==i & analyze$Hz <= abc.v1.low[i],]
 cut=rbind(cut,x)
 }
 
-graphs.cut=function(num){
-  plot(cut$d.index.thumb[cut$optotrak.pulse.number==num],col='green',main=paste0("trial",i),ylim=c(0,100))
-  par(new=TRUE)
-  plot(cut$v.index.thumb[cut$optotrak.pulse.number==num],col='brown',ylim=c(0,1500))
-  par(new=TRUE)
-  plot(cut$v1[cut$optotrak.pulse.number==num],col='blue',ylim=c(0,3000))
-  par(new=TRUE)
-  plot(cut$v3[cut$optotrak.pulse.number==num],col='red',ylim=c(0,3000))
+
+# the number of frames after the cutoff at which you avg the distance between the thumb and index to determine cube size
+m.gap=65
+l=length(levels(cut$optotrak.pulse.number))
+dis.con=c(rep(0,N))
+for(i in 1:N){
+d=analyze[analyze$optotrak.pulse.number==i,]
+d=d$d.index.thumb[d$Hz >= abc[i] & d$Hz <= abc[i]+m.gap]
+dis.con[i]=mean(d)
+}
+
+for(i in S:N){
+  graphs.full(i)
+}
+
+for(i in S:N){
+  graphs.cut(i)
+}
+
+##DETERMINE CUTOFFS AFTER REMOVING BAD TRIALS
+##remove bad trials as determined by notes and presentation output
+bad=c(1,3,4,5,63,67,69,70,71,72,73) #trials to remove
+x=length(bad)
+for (i in 1:x){
+  cut=cut[cut$optotrak.pulse.number!=bad[i],] 
+}
+
+cut$optotrak.pulse.number=factor(cut$optotrak.pulse.number)
+N=length(levels(cut$optotrak.pulse.number))
+
+
+abc.v1=c(rep(0,N))
+for(i in 1:N){
+  d=analyze[analyze$v1 > 1000 & analyze$optotrak.pulse.number==i,]
+  q=d$Hz[1]
+  x=analyze[analyze$v1 < 200 & analyze$optotrak.pulse.number==i & analyze$Hz > q,]
+  abc.v1[i]=x$Hz[1]
+}
+
+abc.v1.low=c(rep(0,N))
+for(i in 1:N){
+  x=analyze[analyze$Hz >= abc.v1[i] & analyze$Hz <= abc.v1[i]+50 & analyze$optotrak.pulse.number== i,]
+  z=x$Hz[x$v1==min(x$v1)]
+  abc.v1.low[i]=z[1]
+}
+
+abc.v1.low[is.na(abc.v1.low)] <- 1
+cut=analyze[analyze$optotrak.pulse.number==1 & analyze$Hz <= abc.v1.low[1],]
+for(i in 2:N){
+  x=analyze[analyze$optotrak.pulse.number==i & analyze$Hz <= abc.v1.low[i],]
+  cut=rbind(cut,x)
+}
+
+
+# the number of frames after the cutoff at which you avg the distance between the thumb and index to determine cube size
+m.gap=65
+cut$optotrak.pulse.number=factor(cut$optotrak.pulse.number)
+l=length(levels(cut$optotrak.pulse.number))
+dis.con=c(rep(0,N))
+for(i in 1:N){
+  d=analyze[analyze$optotrak.pulse.number==i,]
+  d=d$d.index.thumb[d$Hz >= abc.v1.low[i] & d$Hz <= abc.v1.low[i]+m.gap]
+  dis.con[i]=mean(d)
+}
+
+for(i in S:N){
+  graphs.full(i)
 }
 
 for(i in S:N){
@@ -177,12 +206,6 @@ for(i in S:N){
 
 
 
-
-dis.con=c(rep(0,N))
-for(i in 1:N){
-d=analyze$d.index.thumb[analyze$optotrak.pulse.number==i]
-dis.con[i]=d[abc[i]]
-}
 
 
 
@@ -244,7 +267,7 @@ write.csv(clean,file="clean.csv",row.names=F)
 write.csv(inter,file="inter.csv",row.names=F)
 write.csv(optoLog,file="optoLog.csv",row.names=F)
 write.csv(analyze,file="analyze.csv",row.names=F)
-write.csv(cut,file="cut.csv",row.names=F)
+write.csv(cut[cut$optotrak.pulse.number==58,],file="cut.csv",row.names=F)
 write.csv(analyze[analyze$optotrak.pulse.number==8,],file="analyze.csv",row.names=F)
 
 

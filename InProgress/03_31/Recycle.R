@@ -1,10 +1,3 @@
-##remove bad trials as determined by notes and presentation output
-bad=c(1:7,31) #trials to remove
-x=length(bad)
-level3=keepers
-for (i in 1:x){
-  level3=level3[level3$optotrak.pulse.number!=bad[i],] 
-}
 
 
 
