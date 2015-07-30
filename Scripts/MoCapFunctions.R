@@ -231,33 +231,29 @@ optotrialwrite=function(){
 
 }
 
-graphs.full=function(num){
-  plot(analyze$d.index.thumb[analyze$optotrak.pulse.number==num],col='green',main=paste0("trial",i),ylim=c(0,100))
-  abline(h=dis.con[num],col="black")
+graphs.full=function(num,x){
+  plot(analyze.remove$d.index.thumb[analyze.remove$optotrak.pulse.number==num],col='green',main=paste0("trial ", num," ", optoLog.remove$translation[optoLog.remove$a==num]),ylim=c(0,100))
+  abline(h=dis.con[x],col="black")
   par(new=TRUE)
-  plot(analyze$v.index.thumb[analyze$optotrak.pulse.number==num],col='brown',ylim=c(0,1500),yaxt='n')
+  plot(analyze.remove$v.index.thumb[analyze.remove$optotrak.pulse.number==num],col='brown',ylim=c(0,1500),yaxt='n')
   par(new=TRUE)
-  plot(analyze$v1[analyze$optotrak.pulse.number==num],col='blue',ylim=c(0,3000),yaxt='n')
-  text( x = 100, y = 3000, labels = paste0(abc.v1[num]), cex = 1.5, col = "blue" )
-  abline(v=abc.v1[num],col="blue")
-  par(new=TRUE)
-  plot(analyze$v3[analyze$optotrak.pulse.number==num],col='red',ylim=c(0,3000),yaxt='n')
-  text( x = 100, y = 2850, labels = paste0(abc.v3[num]), cex = 1.5, col = "red" )
-  abline(v=abc.v3[num],col="red")
-  text( x = 100, y = 2700, labels = paste0(abc.v1.low[num]), cex = 1.5, col = "orange" )
-  abline(v=abc.v1.low[num],col="orange")
-  abline(v=abc.v1.low[num]+m.gap,col="black")
+  plot(analyze.remove$v1[analyze.remove$optotrak.pulse.number==num],col='blue',ylim=c(0,3000),yaxt='n')
+  text( x = 100, y = 3000, labels = paste0("Cutoff: ",abc.v1[x]), cex = 1.5, col = "blue" )
+  abline(v=abc.v1[x],col="blue")
+  text( x = 100, y = 2700, labels = paste0("Cutoff: ",abc.v1.low[x]), cex = 1.5, col = "orange" )
+  abline(v=abc.v1.low[x],col="orange")
+  abline(v=abc.v1.low[x]+m.gap,col="black")
   
 }
 
 graphs.cut=function(num){
-  plot(cut$d.index.thumb[cut$optotrak.pulse.number==num],col='green',main=paste0("trial",i),ylim=c(0,100))
+  plot(cut$d.index.thumb[cut$optotrak.pulse.number==kept.list[num]],col='green',main=paste0("trial",kept.list[i]),ylim=c(0,100))
   par(new=TRUE)
-  plot(cut$v.index.thumb[cut$optotrak.pulse.number==num],col='brown',ylim=c(0,1500))
+  plot(cut$v.index.thumb[cut$optotrak.pulse.number==kept.list[num]],col='brown',ylim=c(0,1500))
   par(new=TRUE)
-  plot(cut$v1[cut$optotrak.pulse.number==num],col='blue',ylim=c(0,3000))
+  plot(cut$v1[cut$optotrak.pulse.number==kept.list[num]],col='blue',ylim=c(0,3000))
   par(new=TRUE)
-  plot(cut$v3[cut$optotrak.pulse.number==num],col='red',ylim=c(0,3000))
+  plot(cut$v3[cut$optotrak.pulse.number==kept.list[num]],col='red',ylim=c(0,3000))
 }
 
 

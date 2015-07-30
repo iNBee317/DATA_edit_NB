@@ -105,103 +105,62 @@ analyze$v.index.thumb=sqrt((analyze$d.index.thumb-analyze$dd.index.thumb)^2)/.00
 rm(length)
 
 
-##DETERMINE CUTOFFS PRIOR TO REMOVING BAD TRIALS
-N=length(levels(analyze$optotrak.pulse.number))
+##remove bad trials as determined by notes, presentation output, and graph analysis
+bad=c(1:5,63,67:73) #trials to remove
+x=length(bad)
+analyze.remove=analyze
 
+for (i in 1:x){
+  analyze.remove=analyze.remove[analyze.remove$optotrak.pulse.number!=bad[i],] 
+}
+analyze.remove$optotrak.pulse.number=factor(analyze.remove$optotrak.pulse.number)
+kept.list=levels(analyze.remove$optotrak.pulse.number)
+kept.list=as.numeric(kept.list) #numeric vector of trials that have been kept
+
+
+N=length(kept.list)
 abc.v1=c(rep(0,N))
 for(i in 1:N){
-d=analyze[analyze$v1 > 1000 & analyze$optotrak.pulse.number==i,]
+d=analyze.remove[analyze.remove$v1 > 1000 & analyze.remove$optotrak.pulse.number== kept.list[i],]
 q=d$Hz[1]
-x=analyze[analyze$v1 < 200 & analyze$optotrak.pulse.number==i & analyze$Hz > q,]
+x=analyze.remove[analyze.remove$v1 < 200 & analyze.remove$optotrak.pulse.number== kept.list[i] & analyze.remove$Hz > q,]
 abc.v1[i]=x$Hz[1]
 }
 
 abc.v1.low=c(rep(0,N))
 for(i in 1:N){
-  x=analyze[analyze$Hz >= abc.v1[i] & analyze$Hz <= abc.v1[i]+50 & analyze$optotrak.pulse.number== i,]
+  x=analyze.remove[analyze.remove$Hz >= abc.v1[i] & analyze.remove$Hz <= abc.v1[i]+50 & analyze.remove$optotrak.pulse.number== kept.list[i],]
   z=x$Hz[x$v1==min(x$v1)]
   abc.v1.low[i]=z[1]
 }
 
-abc.v1.low[is.na(abc.v1.low)] <- 1
-cut=analyze[analyze$optotrak.pulse.number==1 & analyze$Hz <= abc.v1.low[1],]
+
+cut=analyze.remove[analyze.remove$optotrak.pulse.number==kept.list[1] & analyze.remove$Hz <= abc.v1.low[1],]
 for(i in 2:N){
-x=analyze[analyze$optotrak.pulse.number==i & analyze$Hz <= abc.v1.low[i],]
+x=analyze.remove[analyze.remove$optotrak.pulse.number== kept.list[i] & analyze.remove$Hz <= abc.v1.low[i],]
 cut=rbind(cut,x)
 }
 
 
-# the number of frames after the cutoff at which you avg the distance between the thumb and index to determine cube size
-m.gap=65
-l=length(levels(cut$optotrak.pulse.number))
-dis.con=c(rep(0,N))
+
+m.gap=40 # the number of frames after the cutoff at which you avg the distance between the thumb and index to determine cube size
+dis.con=c(rep(0,N)) #placeholder
 for(i in 1:N){
-d=analyze[analyze$optotrak.pulse.number==i,]
-d=d$d.index.thumb[d$Hz >= abc[i] & d$Hz <= abc[i]+m.gap]
+d=analyze.remove[analyze.remove$optotrak.pulse.number==kept.list[i],]
+d=d$d.index.thumb[d$Hz >= abc.v1.low[i] & d$Hz <= abc.v1.low[i]+m.gap]
 dis.con[i]=mean(d)
 }
 
-for(i in S:N){
-  graphs.full(i)
+for(i in 1:N){
+  graphs.full(num=kept.list[i],x=i)
 }
 
-for(i in S:N){
+for(i in kept.list[1]:N){
   graphs.cut(i)
 }
 
-##DETERMINE CUTOFFS AFTER REMOVING BAD TRIALS
-##remove bad trials as determined by notes and presentation output
-bad=c(1,3,4,5,63,67,69,70,71,72,73) #trials to remove
-x=length(bad)
-for (i in 1:x){
-  cut=cut[cut$optotrak.pulse.number!=bad[i],] 
-}
+dis.con.cm=dis.con/10
 
-cut$optotrak.pulse.number=factor(cut$optotrak.pulse.number)
-N=length(levels(cut$optotrak.pulse.number))
-
-
-abc.v1=c(rep(0,N))
-for(i in 1:N){
-  d=analyze[analyze$v1 > 1000 & analyze$optotrak.pulse.number==i,]
-  q=d$Hz[1]
-  x=analyze[analyze$v1 < 200 & analyze$optotrak.pulse.number==i & analyze$Hz > q,]
-  abc.v1[i]=x$Hz[1]
-}
-
-abc.v1.low=c(rep(0,N))
-for(i in 1:N){
-  x=analyze[analyze$Hz >= abc.v1[i] & analyze$Hz <= abc.v1[i]+50 & analyze$optotrak.pulse.number== i,]
-  z=x$Hz[x$v1==min(x$v1)]
-  abc.v1.low[i]=z[1]
-}
-
-abc.v1.low[is.na(abc.v1.low)] <- 1
-cut=analyze[analyze$optotrak.pulse.number==1 & analyze$Hz <= abc.v1.low[1],]
-for(i in 2:N){
-  x=analyze[analyze$optotrak.pulse.number==i & analyze$Hz <= abc.v1.low[i],]
-  cut=rbind(cut,x)
-}
-
-
-# the number of frames after the cutoff at which you avg the distance between the thumb and index to determine cube size
-m.gap=65
-cut$optotrak.pulse.number=factor(cut$optotrak.pulse.number)
-l=length(levels(cut$optotrak.pulse.number))
-dis.con=c(rep(0,N))
-for(i in 1:N){
-  d=analyze[analyze$optotrak.pulse.number==i,]
-  d=d$d.index.thumb[d$Hz >= abc.v1.low[i] & d$Hz <= abc.v1.low[i]+m.gap]
-  dis.con[i]=mean(d)
-}
-
-for(i in S:N){
-  graphs.full(i)
-}
-
-for(i in S:N){
-  graphs.cut(i)
-}
 
 
 
@@ -211,6 +170,54 @@ for(i in S:N){
 
 #import presentation output log to determine good trials
 optosleuthe(participant)
+
+class(optoLog$V1)
+optoLog$V1=as.character(optoLog$V1)
+optoLog$V1=as.numeric(optoLog$V1)
+
+optoLog.remove=optoLog[optoLog$V1 >= 61 & optoLog$V1 <= 63,]
+a=c(1:99)
+optoLog.remove=cbind(a,optoLog.remove)
+x=length(bad)
+for (i in 1:x){
+  optoLog.remove=optoLog.remove[optoLog.remove$a !=bad[i],] 
+}
+
+optoLog.remove=cbind(optoLog.remove,dis.con.cm)
+one=optoLog.remove[optoLog.remove$a < 52,]
+two=optoLog.remove[optoLog.remove$a >= 52,]
+
+one.1cm=one[one$V1==61,];one.2cm=one[one$V1==62,];one.3cm=one[one$V1==63,]
+two.1cm=two[two$V1==61,];two.2cm=two[two$V1==62,];two.3cm=two[two$V1==63,]
+
+plot(one.1cm$dis.con.cm, pch=0,ylim=c(0,8),xlim=c(0,14),col="blue")
+text( x = 8, y = 8, labels = paste0("Mean 1cm = ",mean(one.1cm$dis.con.cm)), cex = 1.5, col = "blue" )
+abline(h=mean(one.1cm$dis.con.cm),col="blue")
+par(new=TRUE)
+plot(one.2cm$dis.con.cm, pch=1,ylim=c(0,8),xlim=c(0,14),col="red")
+text( x = 8, y = 7.5, labels = paste0("Mean 2cm = ",mean(one.2cm$dis.con.cm)), cex = 1.5, col = "red" )
+abline(h=mean(one.2cm$dis.con.cm),col="red")
+par(new=TRUE)
+plot(one.3cm$dis.con.cm, pch=2,ylim=c(0,8),xlim=c(0,14),col="black")
+text( x = 8, y = 7, labels = paste0("Mean 3cm = ",mean(one.3cm$dis.con.cm)), cex = 1.5, col = "black" )
+abline(h=mean(one.3cm$dis.con.cm),col="black")
+
+plot(two.1cm$dis.con.cm, pch=0,ylim=c(0,9),xlim=c(0,14),col="blue")
+text( x = 8, y = 2, labels = paste0("Mean 1cm = ",mean(two.1cm$dis.con.cm)), cex = 1.5, col = "blue" )
+abline(h=mean(two.1cm$dis.con.cm),col="blue")
+par(new=TRUE)
+plot(two.2cm$dis.con.cm, pch=1,ylim=c(0,9),xlim=c(0,14),col="red")
+text( x = 8, y = 1.5, labels = paste0("Mean 2cm = ",mean(two.2cm$dis.con.cm)), cex = 1.5, col = "red" )
+abline(h=mean(two.2cm$dis.con.cm),col="red")
+par(new=TRUE)
+plot(two.3cm$dis.con.cm, pch=2,ylim=c(0,9),xlim=c(0,14),col="black")
+text( x = 8, y = 1, labels = paste0("Mean 3cm = ",mean(two.3cm$dis.con.cm)), cex = 1.5, col = "black" )
+abline(h=mean(two.3cm$dis.con.cm),col="black")
+
+
+
+
+
 
 x=length(inter$optotrak.pulse.number)
 vision=c(rep("?",x))
