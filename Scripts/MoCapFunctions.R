@@ -233,7 +233,7 @@ optotrialwrite=function(){
 
 graphs.full=function(num,x,optoLog=F){
   if(optoLog == T){ 
-    plot(analyze.remove$d.index.thumb[analyze.remove$optotrak.pulse.number==num],col='green',main=paste0("trial ", num," ", optoLog.remove$translation[optoLog.remove$a==num]),ylim=c(0,100))
+    plot(analyze.remove$d.index.thumb[analyze.remove$optotrak.pulse.number==num],col='green',main=paste0("trial ", num," ", analyze.remove$blocksize[analyze.remove$optotrak.pulse.number==num][1]),ylim=c(0,100))
     abline(h=dis.con[x],col="black")
     par(new=TRUE)
     plot(analyze.remove$v.index.thumb[analyze.remove$optotrak.pulse.number==num],col='brown',ylim=c(0,1500),yaxt='n')
@@ -347,9 +347,64 @@ dd.index.thumb=c(dd.index.thumb,0)
 analyze=cbind(analyze,dd.index.thumb,v.index.thumb)
 analyze$v.index.thumb=sqrt((analyze$d.index.thumb-analyze$dd.index.thumb)^2)/t
 rm(length)
+analyze<<-analyze
 }
 
+conditions=function(){
+  x=length(analyze$optotrak.pulse.number)
+  vision=c(rep("?",x))
+  hand=c(rep("?",x))
+  blocksize=c(rep("?",x))
+  block=c(rep("?",x))
+  analyze<<-cbind(analyze,vision,hand,blocksize,block)
+  analyze$vision<<-as.factor(analyze$vision)
+  levels(analyze$vision)<<-c("?","visible","hidden")
+  levels(analyze$hand)<<-c("?","left","right")
+  levels(analyze$blocksize)<<-c("?","2cm","1cm","4cm")
+  levels(analyze$block)<<-c("?","Block1","Block2","Block3","Block4")
+  b1.1 = readline(prompt="What trials does block one start on?: ")
+  b1.2 = readline(prompt="What trials does block one end on?: ")
+  b2.1 = readline(prompt="What trials does block two start on?: ")
+  b2.2 = readline(prompt="What trials does block two end on?: ")
+  b3.1 = readline(prompt="What trials does block three start on?: ")
+  b3.2 = readline(prompt="What trials does block three end on?: ")
+  b4.1 = readline(prompt="What trials does block four start on?: ")
+  b4.2 = readline(prompt="What trials does block four end on?: ")
+  b1=as.integer(b1.1):as.integer(b1.2)
+  b2=as.integer(b2.1):as.integer(b2.2)
+  b3=as.integer(b3.1):as.integer(b3.2)
+  b4=as.integer(b4.1):as.integer(b4.2)
+  b1.vision = readline(prompt="Is block one visible or hidden?: ")
+  b2.vision = readline(prompt="Is block two visible or hidden?: ")
+  b3.vision = readline(prompt="Is block three visible or hidden?: ")
+  b4.vision = readline(prompt="Is block four visible or hidden?: ")
+  
+  b1.hand = readline(prompt="Is block one and two usign the left or right hand?: ")
+  b3.hand = readline(prompt="Is block three and four usign the left or right hand?: ")
+  
+  for(i in 1:length(b1)){
+    analyze$block[analyze$optotrak.pulse.number == b1[i]] <<- "Block1"
+  }
+  for(i in 1:length(b2)){
+    analyze$block[analyze$optotrak.pulse.number == b2[i]] <<- "Block2"
+  }
+  for(i in 1:length(b3)){
+    analyze$block[analyze$optotrak.pulse.number == b3[i]] <<- "Block3"
+  }
+  for(i in 1:length(b4)){
+    analyze$block[analyze$optotrak.pulse.number == b4[i]] <<- "Block4"
+  }
 
+  analyze$vision[analyze$block=="Block1"]<<-b1.vision
+  analyze$vision[analyze$block=="Block2"]<<-b2.vision
+  analyze$vision[analyze$block=="Block3"]<<-b3.vision
+  analyze$vision[analyze$block=="Block4"]<<-b4.vision
+  
+  analyze$hand[analyze$block=="Block1"]<<-b1.hand
+  analyze$hand[analyze$block=="Block2"]<<-b1.hand
+  analyze$hand[analyze$block=="Block3"]<<-b3.hand
+  analyze$hand[analyze$block=="Block4"]<<-b3.hand
+}
 
 
 

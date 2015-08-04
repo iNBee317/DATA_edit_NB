@@ -22,12 +22,12 @@ optoimport(participant)
 #reference how many trials there are#
 
 
-interpolate(N=max(as.numeric(keepers$optotrak.pulse.number)),S=1,M=Inf)
+interpolate(N=max(as.numeric(keepers$optotrak.pulse.number)),S=1,M=50)
 
 pythagorean(500)
 
 ##remove bad trials as determined by notes, presentation output, and graph analysis
-bad=c(1,27,28,47,52,53,78,84,91,94,99,100,101) #trials to remove
+bad=c(1,27,52,53) #trials to remove
 x=length(bad)
 analyze.remove=analyze
 
@@ -68,25 +68,42 @@ for(i in 1:N){
   graphs.full(num=kept.list[i],x=i,optoLog=F)
 }
 
+#reports the condiitions
+print(optoLog[optoLog$V1 >=10 & optoLog$V1 <=14,])
+#function that creates the appropriate condition columns
+conditions()
 
-#import presentation output log to determine good trials
+##import presentation output log to determine good trials##
 optosleuthe(participant)
 
 class(optoLog$V1)
 optoLog$V1=as.character(optoLog$V1)
 optoLog$V1=as.numeric(optoLog$V1)
 
-optoLog.remove=optoLog[optoLog$V1 >= 61 & optoLog$V1 <= 63,]
-a=c(1:N)
+optoLog.remove=optoLog[optoLog$V1 >= 61 & optoLog$V1 <= 63 | optoLog$V1 >= 9000 &  optoLog$V1 <= 9600,]
+optoLog.remove=optoLog[optoLog$V1 >= 61 & optoLog$V1 <= 63 ,]
+a=c(1:length(kept.list))
 optoLog.remove=cbind(a,optoLog.remove)
-x=length(bad)
-for (i in 1:x){
-  optoLog.remove=optoLog.remove[optoLog.remove$a !=bad[i],] 
-}
+
 
 optoLog.remove=cbind(optoLog.remove,dis.con.cm)
+analyze.remove$optotrak.pulse.number=as.numeric(analyze.remove$optotrak.pulse.number)
+
 for(i in 1:N){
-  graphs.full(num=kept.list[i],x=i)
+  if(optoLog.remove$translation[i]=="move epoch: 3cm cube"){
+    optoLog.remove$translation[i]<- "4cm"
+  }
+  if(optoLog.remove$translation[i]=="move epoch: 2cm cube"){
+    optoLog.remove$translation[i]<- "2cm"
+  }
+  if(optoLog.remove$translation[i]=="move epoch: 1cm cube"){
+    optoLog.remove$translation[i]<- "1cm"
+  }
+  analyze.remove$blocksize[analyze.remove$optotrak.pulse.number==kept.list[i]]<-optoLog.remove$translation[i]
+}
+
+for(i in 1:N){
+  graphs.full(num=kept.list[i],x=i,optoLog=T)
 }
 
 for(i in kept.list[1]:N){
@@ -134,32 +151,7 @@ for(i in 2:N){
 
 
 
-x=length(inter$optotrak.pulse.number)
-vision=c(rep("?",x))
-hand=c(rep("?",x))
-blocksize=c(rep("?",x))
-block=c(rep("?",x))
-inter=data.frame(inter,vision,hand,blocksize,block)
-inter$vision=as.factor(inter$vision)
-levels(inter$vision)=c("?","visible","hidden")
-levels(inter$hand)=c("?","left","right")
-levels(inter$blocksize)=c("?","2cm","1cm","3cm")
-levels(inter$block)=c("?","Block1","Block2","Block3","Block4")
 
-inter$block[1:27]="Block1"
-inter$block[28:51]="Block2"
-inter$block[52:75]="Block3"
-inter$block[76:99]="Block4"
-
-inter$vision[inter$block=="Block1"]="visible"
-inter$vision[inter$block=="Block2"]="hidden"
-inter$vision[inter$block=="Block3"]="hidden"
-inter$vision[inter$block=="Block4"]="visible"
-
-inter$hand[inter$block=="Block1"]="left"
-inter$hand[inter$block=="Block2"]="left"
-inter$hand[inter$block=="Block3"]="right"
-inter$hand[inter$block=="Block4"]="right"
 
 
 
@@ -189,6 +181,7 @@ write.csv(clean,file="clean.csv",row.names=F)
 write.csv(inter,file="inter.csv",row.names=F)
 write.csv(optoLog,file="optoLog.csv",row.names=F)
 write.csv(analyze,file="analyze.csv",row.names=F)
+write.csv(analyze.remove,file="analyzeremove.csv",row.names=F)
 write.csv(cut[cut$optotrak.pulse.number==58,],file="cut.csv",row.names=F)
 write.csv(analyze[analyze$optotrak.pulse.number==8,],file="analyze.csv",row.names=F)
 
