@@ -106,8 +106,8 @@ for(i in 1:N){
   graphs.full(num=kept.list[i],x=i,optoLog=T)
 }
 
-for(i in kept.list[1]:N){
-  graphs.cut(i)
+for(i in 1:N){
+  graphs.cut(num=kept.list[i])
 }
 
 plot(dis.con.cm)
@@ -150,9 +150,48 @@ for(i in 2:N){
 }
 
 
+#organize the DV's into a data frame
+blocksize=c(rep(0,N))
+vision=c(rep(0,N))
+hand=c(rep(0,N))
+transport_duration=c(rep(0,N))
+max_ap_size=c(rep(0,N))
+max_ap_time=c(rep(0,N))
+max_velocity=c(rep(0,N))
+stat_data=data.frame(blocksize,vision,hand,max_ap_size,max_ap_time,transport_duration,max_velocity)
+stat_data$blocksize=factor(stat_data$blocksize)
+levels(stat_data$blocksize)=c("?","1cm","2cm","4cm")
+stat_data$vision=factor(stat_data$vision)
+levels(stat_data$vision)=c("?","visible","hidden")
+stat_data$hand=factor(stat_data$hand)
+levels(stat_data$hand)=c("?","left","right")
+statistics()
+
+
+require(psych)
+#descriptive statistics for DV's based on hand used
+tapply(stat_data$max_ap_size,list(stat_data$hand),describe,na.rm=T)
+tapply(stat_data$max_ap_time,list(stat_data$hand),describe,na.rm=T)
+tapply(stat_data$max_velocity,list(stat_data$hand),describe,na.rm=T)
+tapply(stat_data$transport_duration,list(stat_data$hand),describe,na.rm=T)
+
+#descriptive statistics for DV's based on vision
+tapply(stat_data$max_ap_size,list(stat_data$vision),describe,na.rm=T)
+tapply(stat_data$max_ap_time,list(stat_data$vision),describe,na.rm=T)
+tapply(stat_data$max_velocity,list(stat_data$vision),describe,na.rm=T)
+tapply(stat_data$transport_duration,list(stat_data$vision),describe,na.rm=T)
+
+#descriptive statistics for DV's based on block size
+tapply(stat_data$max_ap_size,list(stat_data$blocksize),describe,na.rm=T)
+tapply(stat_data$max_ap_time,list(stat_data$blocksize),describe,na.rm=T)
+tapply(stat_data$max_velocity,list(stat_data$blocksize),describe,na.rm=T)
+tapply(stat_data$transport_duration,list(stat_data$blocksize),describe,na.rm=T)
 
 
 
+
+
+tapply(stat_data$max_ap_size,list(stat_data$hand,stat_data$vision,stat_data$blocksize),describe,na.rm=T)
 
 
 
@@ -182,7 +221,7 @@ write.csv(inter,file="inter.csv",row.names=F)
 write.csv(optoLog,file="optoLog.csv",row.names=F)
 write.csv(analyze,file="analyze.csv",row.names=F)
 write.csv(analyze.remove,file="analyzeremove.csv",row.names=F)
-write.csv(cut[cut$optotrak.pulse.number==58,],file="cut.csv",row.names=F)
+write.csv(cut,file="cut.csv",row.names=F)
 write.csv(analyze[analyze$optotrak.pulse.number==8,],file="analyze.csv",row.names=F)
 
 

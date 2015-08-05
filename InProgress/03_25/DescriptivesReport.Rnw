@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{ margin=1in}
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\huge Descriptive Stat's Report 
+
+\emph{Participant 25}
+
+
+<<echo=F>>=
+require(psych)
+load("03_25.RData")
+@
+
+\bigskip
+\normalsize
+\bf
+\centerline{DV's Based on Hand Used}
+\small
+Max Aperature Size
+<<echo=F>>=
+tapply(stat_data$max_ap_size,list(stat_data$hand),describe,na.rm=T)
+@
+
+Time of Max Aperature
+<<echo=F>>=
+tapply(stat_data$max_ap_time,list(stat_data$hand),describe,na.rm=T)
+@
+
+Max Velocty of Hand
+<<echo=F>>=
+tapply(stat_data$max_velocity,list(stat_data$hand),describe,na.rm=T)
+@
+
+Total Duration of Transport
+<<echo=F>>=
+tapply(stat_data$transport_duration,list(stat_data$hand),describe,na.rm=T)
+@
+
+
+\newpage
+
+\normalsize
+\bf
+\centerline{DV's Based on Vision Condition}
+\small
+Max Aperature Size
+<<echo=F>>=
+tapply(stat_data$max_ap_size,list(stat_data$vision),describe,na.rm=T)
+@
+
+Time of Max Aperature
+<<echo=F>>=
+tapply(stat_data$max_ap_time,list(stat_data$vision),describe,na.rm=T)
+@
+
+Max Velocty of Hand
+<<echo=F>>=
+tapply(stat_data$max_velocity,list(stat_data$vision),describe,na.rm=T)
+@
+
+Total Duration of Transport
+<<echo=F>>=
+tapply(stat_data$transport_duration,list(stat_data$vision),describe,na.rm=T)
+@
+
+\newpage
+
+\normalsize
+\bf
+\centerline{DV's Based on Block Size}
+\small
+Max Aperature Size
+<<echo=F>>=
+tapply(stat_data$max_ap_size,list(stat_data$blocksize),describe,na.rm=T)
+@
+
+Time of Max Aperature
+<<echo=F>>=
+tapply(stat_data$max_ap_time,list(stat_data$blocksize),describe,na.rm=T)
+@
+
+Max Velocty of Hand
+<<echo=F>>=
+tapply(stat_data$max_velocity,list(stat_data$blocksize),describe,na.rm=T)
+@
+
+Total Duration of Transport
+<<echo=F>>=
+tapply(stat_data$transport_duration,list(stat_data$blocksize),describe,na.rm=T)
+@
+
+
+
+
+
+\end{document}

@@ -261,13 +261,13 @@ graphs.full=function(num,x,optoLog=F){
 }
 
 graphs.cut=function(num){
-  plot(cut$d.index.thumb[cut$optotrak.pulse.number==kept.list[num]],col='green',main=paste0("trial",kept.list[i]),ylim=c(0,100))
+  plot(cut$d.index.thumb[cut$optotrak.pulse.number==i],col='green',main=paste0("trial",kept.list[i]),ylim=c(0,100),xlim=c(0,200))
   par(new=TRUE)
-  plot(cut$v.index.thumb[cut$optotrak.pulse.number==kept.list[num]],col='brown',ylim=c(0,1500))
+  plot(cut$v.index.thumb[cut$optotrak.pulse.number==i],col='brown',ylim=c(0,1500),xlim=c(0,200))
   par(new=TRUE)
-  plot(cut$v1[cut$optotrak.pulse.number==kept.list[num]],col='blue',ylim=c(0,3000))
+  plot(cut$v1[cut$optotrak.pulse.number==i],col='blue',ylim=c(0,3000),xlim=c(0,200))
   par(new=TRUE)
-  plot(cut$v3[cut$optotrak.pulse.number==kept.list[num]],col='red',ylim=c(0,3000))
+  plot(cut$v3[cut$optotrak.pulse.number==i],col='red',ylim=c(0,3000),xlim=c(0,200))
 }
 
 pythagorean=function(Hz){
@@ -407,7 +407,32 @@ conditions=function(){
 }
 
 
-
+statistics=function(){
+  for(i in 1:N){
+    stat_data$blocksize[i]<<-cut$blocksize[cut$optotrak.pulse.number==kept.list[i]][1]
+  }
+  for(i in 1:N){
+    stat_data$vision[i]<<-cut$vision[cut$optotrak.pulse.number==kept.list[i]][1]
+  }
+  for(i in 1:N){
+    stat_data$hand[i]<<-cut$hand[cut$optotrak.pulse.number==kept.list[i]][1]
+  }
+  
+  for(i in 1:N){
+    stat_data$max_ap_size[i]<<-max(cut$d.index.thumb[cut$optotrak.pulse.number==kept.list[i]],na.rm=T)
+  }
+  
+  for(i in 1:N){
+    stat_data$max_ap_time[i]<<-cut$Hz[cut$optotrak.pulse.number==kept.list[i] & cut$d.index.thumb == stat_data$max_ap_size[i]][1]
+  }
+  for(i in 1:N){
+    stat_data$max_velocity[i]<<-max(cut$v5[cut$optotrak.pulse.number==kept.list[i]], na.rm=T)
+  }
+  
+  
+stat_data$transport_duration<<-abc.v1.low
+  
+}
 
 
 
