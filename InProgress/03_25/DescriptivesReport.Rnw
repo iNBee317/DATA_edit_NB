@@ -11,7 +11,7 @@
 
 <<echo=F>>=
 require(psych)
-load("03_25.RData")
+load("03_25.rdata")
 @
 
 \bigskip

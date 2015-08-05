@@ -1,7 +1,8 @@
 #Entry Required: enter the partiicpant number with quotation marks "03_31" or "03_45", etc.
-participant="03_25"
+participant="03_36"
 #----Packages Required (No Entry Required)----
-library(zoo)
+library(zoo,psych)
+
 
 #----Call scripts to import functions (No Entry Required)----
 setwd("/Volumes/Swap/Opto_data/Scripts")
@@ -21,13 +22,13 @@ optoimport(participant)
 
 #reference how many trials there are#
 
-
 interpolate(N=max(as.numeric(keepers$optotrak.pulse.number)),S=1,M=50)
 
 pythagorean(500)
 
 ##remove bad trials as determined by notes, presentation output, and graph analysis
-bad=c(1,27,52,53) #trials to remove
+length(levels(analyze$optotrak.pulse.number))
+bad=c(200) #trials to remove
 x=length(bad)
 analyze.remove=analyze
 
@@ -37,7 +38,6 @@ for (i in 1:x){
 analyze.remove$optotrak.pulse.number=factor(analyze.remove$optotrak.pulse.number)
 kept.list=levels(analyze.remove$optotrak.pulse.number)
 kept.list=as.numeric(kept.list) #numeric vector of trials that have been kept
-
 
 N=length(kept.list)
 abc.v1=c(rep(0,N))
@@ -67,11 +67,8 @@ dis.con.cm=dis.con/10
 for(i in 1:N){
   graphs.full(num=kept.list[i],x=i,optoLog=F)
 }
-
-#reports the condiitions
-print(optoLog[optoLog$V1 >=10 & optoLog$V1 <=14,])
-#function that creates the appropriate condition columns
-conditions()
+i=9
+graphs.full(num=kept.list[i],x=i,optoLog=F)
 
 ##import presentation output log to determine good trials##
 optosleuthe(participant)
@@ -85,9 +82,13 @@ optoLog.remove=optoLog[optoLog$V1 >= 61 & optoLog$V1 <= 63 ,]
 a=c(1:length(kept.list))
 optoLog.remove=cbind(a,optoLog.remove)
 
-
 optoLog.remove=cbind(optoLog.remove,dis.con.cm)
 analyze.remove$optotrak.pulse.number=as.numeric(analyze.remove$optotrak.pulse.number)
+
+#reports the condiitions
+print(optoLog[optoLog$V1 >=10 & optoLog$V1 <=14,])
+#function that creates the appropriate condition columns
+conditions()
 
 for(i in 1:N){
   if(optoLog.remove$translation[i]=="move epoch: 3cm cube"){
@@ -99,7 +100,7 @@ for(i in 1:N){
   if(optoLog.remove$translation[i]=="move epoch: 1cm cube"){
     optoLog.remove$translation[i]<- "1cm"
   }
-  analyze.remove$blocksize[analyze.remove$optotrak.pulse.number==kept.list[i]]<-optoLog.remove$translation[i]
+  analyze$blocksize[analyze$optotrak.pulse.number==kept.list[i]]<-optoLog.remove$translation[i]
 }
 
 for(i in 1:N){
@@ -112,35 +113,6 @@ for(i in 1:N){
 
 plot(dis.con.cm)
 
-one=optoLog.remove[optoLog.remove$a < 52,]
-two=optoLog.remove[optoLog.remove$a >= 52,]
-
-one.1cm=one[one$V1==61,];one.2cm=one[one$V1==62,];one.3cm=one[one$V1==63,]
-two.1cm=two[two$V1==61,];two.2cm=two[two$V1==62,];two.3cm=two[two$V1==63,]
-
-plot(one.1cm$dis.con.cm, pch=0,ylim=c(0,8),xlim=c(0,14),col="blue")
-text( x = 8, y = 8, labels = paste0("Mean 1cm = ",mean(one.1cm$dis.con.cm)), cex = 1.5, col = "blue" )
-abline(h=mean(one.1cm$dis.con.cm),col="blue")
-par(new=TRUE)
-plot(one.2cm$dis.con.cm, pch=1,ylim=c(0,8),xlim=c(0,14),col="red")
-text( x = 8, y = 7.5, labels = paste0("Mean 2cm = ",mean(one.2cm$dis.con.cm)), cex = 1.5, col = "red" )
-abline(h=mean(one.2cm$dis.con.cm),col="red")
-par(new=TRUE)
-plot(one.3cm$dis.con.cm, pch=2,ylim=c(0,8),xlim=c(0,14),col="black")
-text( x = 8, y = 7, labels = paste0("Mean 3cm = ",mean(one.3cm$dis.con.cm)), cex = 1.5, col = "black" )
-abline(h=mean(one.3cm$dis.con.cm),col="black")
-
-plot(two.1cm$dis.con.cm, pch=0,ylim=c(0,9),xlim=c(0,14),col="blue")
-text( x = 8, y = 2, labels = paste0("Mean 1cm = ",mean(two.1cm$dis.con.cm)), cex = 1.5, col = "blue" )
-abline(h=mean(two.1cm$dis.con.cm),col="blue")
-par(new=TRUE)
-plot(two.2cm$dis.con.cm, pch=1,ylim=c(0,9),xlim=c(0,14),col="red")
-text( x = 8, y = 1.5, labels = paste0("Mean 2cm = ",mean(two.2cm$dis.con.cm)), cex = 1.5, col = "red" )
-abline(h=mean(two.2cm$dis.con.cm),col="red")
-par(new=TRUE)
-plot(two.3cm$dis.con.cm, pch=2,ylim=c(0,9),xlim=c(0,14),col="black")
-text( x = 8, y = 1, labels = paste0("Mean 3cm = ",mean(two.3cm$dis.con.cm)), cex = 1.5, col = "black" )
-abline(h=mean(two.3cm$dis.con.cm),col="black")
 
 
 cut=analyze.remove[analyze.remove$optotrak.pulse.number==kept.list[1] & analyze.remove$Hz <= abc.v1.low[1],]
@@ -168,32 +140,10 @@ levels(stat_data$hand)=c("?","left","right")
 statistics()
 
 
-require(psych)
-#descriptive statistics for DV's based on hand used
-tapply(stat_data$max_ap_size,list(stat_data$hand),describe,na.rm=T)
-tapply(stat_data$max_ap_time,list(stat_data$hand),describe,na.rm=T)
-tapply(stat_data$max_velocity,list(stat_data$hand),describe,na.rm=T)
-tapply(stat_data$transport_duration,list(stat_data$hand),describe,na.rm=T)
-
-#descriptive statistics for DV's based on vision
-tapply(stat_data$max_ap_size,list(stat_data$vision),describe,na.rm=T)
-tapply(stat_data$max_ap_time,list(stat_data$vision),describe,na.rm=T)
-tapply(stat_data$max_velocity,list(stat_data$vision),describe,na.rm=T)
-tapply(stat_data$transport_duration,list(stat_data$vision),describe,na.rm=T)
-
-#descriptive statistics for DV's based on block size
-tapply(stat_data$max_ap_size,list(stat_data$blocksize),describe,na.rm=T)
-tapply(stat_data$max_ap_time,list(stat_data$blocksize),describe,na.rm=T)
-tapply(stat_data$max_velocity,list(stat_data$blocksize),describe,na.rm=T)
-tapply(stat_data$transport_duration,list(stat_data$blocksize),describe,na.rm=T)
-
-
-
-
-
 tapply(stat_data$max_ap_size,list(stat_data$hand,stat_data$vision,stat_data$blocksize),describe,na.rm=T)
 
-
+Y=stat_data
+answer=anova(lm(Y$max_ap_size~Y$hand*Y$vision*Y$blocksize))
 
 
 
