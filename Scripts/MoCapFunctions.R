@@ -72,7 +72,13 @@ for (i in 1:x){
     optoLog$translation[i] <<- "experimenter denied"}
   if(optoLog$V1[i]==100){
     optoLog$translation[i] <<- "end of block"}
-}}
+}
+optoLog$V1<<-as.character(optoLog$V1)
+optoLog$V1<<-as.numeric(optoLog$V1)
+
+optoLog.remove<<-optoLog[optoLog$V1 >= 61 & optoLog$V1 <= 63 | optoLog$V1 >= 9000 &  optoLog$V1 <= 9600,]
+optoLog.remove<<-optoLog[optoLog$V1 >= 61 & optoLog$V1 <= 63 ,]
+}
 
 interpolate=function(N,S,M){
 inter<<-keepers
@@ -261,13 +267,13 @@ graphs.full=function(num,x,optoLog=F){
 }
 
 graphs.cut=function(num){
-  plot(cut$d.index.thumb[cut$optotrak.pulse.number==i],col='green',main=paste0("trial",kept.list[i]),ylim=c(0,100),xlim=c(0,200))
+  plot(cut$d.index.thumb[cut$optotrak.pulse.number==num],col='green',main=paste0("trial",num),ylim=c(0,100),xlim=c(0,200))
   par(new=TRUE)
-  plot(cut$v.index.thumb[cut$optotrak.pulse.number==i],col='brown',ylim=c(0,1500),xlim=c(0,200))
+  plot(cut$v.index.thumb[cut$optotrak.pulse.number==num],col='brown',ylim=c(0,1500),xlim=c(0,200))
   par(new=TRUE)
-  plot(cut$v1[cut$optotrak.pulse.number==i],col='blue',ylim=c(0,3000),xlim=c(0,200))
+  plot(cut$v1[cut$optotrak.pulse.number==num],col='blue',ylim=c(0,3000),xlim=c(0,200))
   par(new=TRUE)
-  plot(cut$v3[cut$optotrak.pulse.number==i],col='red',ylim=c(0,3000),xlim=c(0,200))
+  plot(cut$v3[cut$optotrak.pulse.number==num],col='red',ylim=c(0,3000),xlim=c(0,200))
 }
 
 pythagorean=function(Hz){
@@ -351,6 +357,8 @@ analyze<<-analyze
 }
 
 conditions=function(){
+  #reports the condiitions
+  print(optoLog[optoLog$V1 >=10 & optoLog$V1 <=14,])
   x=length(analyze$optotrak.pulse.number)
   vision=c(rep("?",x))
   hand=c(rep("?",x))
@@ -408,6 +416,20 @@ conditions=function(){
 
 
 statistics=function(){
+  blocksize<<-c(rep(0,N))
+  vision<<-c(rep(0,N))
+  hand<<-c(rep(0,N))
+  transport_duration<<-c(rep(0,N))
+  max_ap_size<<-c(rep(0,N))
+  max_ap_time<<-c(rep(0,N))
+  max_velocity<<-c(rep(0,N))
+  stat_data<<-data.frame(blocksize,vision,hand,max_ap_size,max_ap_time,transport_duration,max_velocity)
+  stat_data$blocksize<<-factor(stat_data$blocksize)
+  levels(stat_data$blocksize)<<-c("?","1cm","2cm","4cm")
+  stat_data$vision<<-factor(stat_data$vision)
+  levels(stat_data$vision)<<-c("?","visible","hidden")
+  stat_data$hand<<-factor(stat_data$hand)
+  levels(stat_data$hand)<<-c("?","left","right")
   for(i in 1:N){
     stat_data$blocksize[i]<<-cut$blocksize[cut$optotrak.pulse.number==kept.list[i]][1]
   }
@@ -434,7 +456,65 @@ stat_data$transport_duration<<-abc.v1.low
   
 }
 
+translate=function(){
+  for(i in 1:N){
+    if(optoLog.remove$translation[i]=="move epoch: 3cm cube"){
+      optoLog.remove$translation[i]<<- "4cm"
+    }
+    if(optoLog.remove$translation[i]=="move epoch: 2cm cube"){
+      optoLog.remove$translation[i]<<- "2cm"
+    }
+    if(optoLog.remove$translation[i]=="move epoch: 1cm cube"){
+      optoLog.remove$translation[i]<<- "1cm"
+    }
+  }
+}
 
+
+bad.remove=function(bad){
+  x=length(bad)
+  analyze.remove<<-analyze
+  
+  for (i in 1:x){
+    analyze.remove<<-analyze.remove[analyze.remove$optotrak.pulse.number!=bad[i],] 
+  }
+  analyze.remove$optotrak.pulse.number<<-factor(analyze.remove$optotrak.pulse.number)
+  kept.list<<-levels(analyze.remove$optotrak.pulse.number)
+  kept.list<<-as.numeric(kept.list) #numeric vector of trials that have been kept
+  
+  N<<-length(kept.list)
+  abc.v1<<-c(rep(0,N))
+  for(i in 1:N){
+    d=analyze.remove[analyze.remove$v1 > 1000 & analyze.remove$optotrak.pulse.number== kept.list[i],]
+    q=d$Hz[1]
+    x=analyze.remove[analyze.remove$v1 < 200 & analyze.remove$optotrak.pulse.number== kept.list[i] & analyze.remove$Hz > q,]
+    abc.v1[i]<<-x$Hz[1]
+  }
+  
+  abc.v1.low<<-c(rep(0,N))
+  for(i in 1:N){
+    x=analyze.remove[analyze.remove$Hz >= abc.v1[i] & analyze.remove$Hz <= abc.v1[i]+50 & analyze.remove$optotrak.pulse.number== kept.list[i],]
+    z=x$Hz[x$v1==min(x$v1)]
+    abc.v1.low[i]<<-z[1]
+  }
+  
+  m.gap=40 # the number of frames after the cutoff at which you avg the distance between the thumb and index to determine cube size
+  dis.con=c(rep(0,N)) #placeholder
+  for(i in 1:N){
+    d=analyze.remove[analyze.remove$optotrak.pulse.number==kept.list[i],]
+    d=d$d.index.thumb[d$Hz >= abc.v1.low[i] & d$Hz <= abc.v1.low[i]+m.gap]
+    dis.con[i]<<-mean(d)
+  }
+  dis.con.cm<<-dis.con/10
+  
+  }
+
+
+alter=function(){
+  altered=blockaudit$trial[blockaudit$good.or.bad=="!"]
+  for(i in 1:length(altered)){
+    abc.v1.low[altered[i]]<<-blockaudit$notes[blockaudit$trial==altered[i]]
+}}
 
 
 

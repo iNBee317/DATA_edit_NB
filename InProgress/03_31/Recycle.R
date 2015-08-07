@@ -12,3 +12,22 @@ for(i in 1:z){
 
 
 
+##creates .csv files for each trial##
+##within the home directory##
+
+optotrialwrite()
+
+
+##create trial number column
+distance1=c(rep("?",x))
+for i in 1:x
+distance1[i]=
+
+  
+  #used to shape the optolog.remove frame
+a=c(1:length(kept.list))
+optoLog.remove=cbind(a,optoLog.remove)
+
+optoLog.remove=cbind(optoLog.remove,dis.con.cm)
+analyze.remove$optotrak.pulse.number=as.numeric(analyze.remove$optotrak.pulse.number)
+
