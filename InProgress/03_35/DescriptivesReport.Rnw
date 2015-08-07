@@ -6,12 +6,12 @@
 
 \huge Descriptive Stat's Report 
 
-\emph{Participant 25}
+\emph{Participant 28}
 
 
 <<echo=F>>=
 require(psych)
-load("03_25.rdata")
+load("03_28.rdata")
 @
 
 \bigskip

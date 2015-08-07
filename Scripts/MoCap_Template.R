@@ -1,5 +1,5 @@
 #Entry Required: enter the partiicpant number with quotation marks "03_31" or "03_45", etc.
-participant="03_28"
+participant="03_12"
 #----Packages Required (No Entry Required)----
 library(zoo,psych)
 
@@ -27,27 +27,25 @@ pythagorean(500)
 bad=c(200) #trials to remove
 bad.remove(bad)
 
-for(i in rev(1:N)){
-  graphs.full(num=kept.list[i],x=i,optoLog=F)
-}
-
 ##import presentation output log to determine good trials##
 optosleuthe(participant)
-
-
-#function that creates the appropriate condition columns
-conditions()
-
 #function that translates the block size column in the optoLog.remove file into 1cm, 2cm, or 4cm 
 translate() 
 
+#
+
+###NEED TO GO THROUGH AND AUDIT THE BLOCKAUDIT SHEET WITH THE GRAPHS###
+#copy and paste the block size and time columns into the blockaudit .csv file
+write.csv(optoLog.remove,file="optoLogRemove.csv",row.names=F)
+
 blockaudit=read.csv("blockaudit.csv",header=T)
 for(i in 1:N){
-analyze$blocksize[analyze$optotrak.pulse.number==kept.list[i]]<-blockaudit$optoblocksize[i]
+  analyze$blocksize[analyze$optotrak.pulse.number==kept.list[i]]<-blockaudit$optoblocksize[i]
 }
-
+#function that creates the appropriate condition columns
+conditions()
 #function to manually alter the cutoff for certain trails after auditing each graph
-bad=c(blockaudit$trial[blockaudit$good.or.bad=="BAD"],39)
+bad=c(blockaudit$trial[blockaudit$good.or.bad=="BAD"],71,80)
 bad.remove(bad)
 alter()
 
@@ -57,8 +55,8 @@ for(i in 2:N){
   cut=rbind(cut,x)
 }
 
-for(i in rev(1:N)){
-  graphs.full(num=kept.list[22],x=i,optoLog=T)
+for(i in rev(1:99)){
+  graphs.full(num=kept.list[i],x=i,optoLog=F)
 }
 
 for(i in rev(1:N)){
@@ -79,6 +77,7 @@ answer=anova(lm(Y$max_ap_size~Y$hand*Y$vision*Y$blocksize))
 write.csv(keepers,file="keepers.csv",row.names=F)
 write.csv(clean,file="clean.csv",row.names=F)
 write.csv(inter,file="inter.csv",row.names=F)
+write.csv(optoLog.trial,file="optoLogTrial.csv",row.names=F)
 write.csv(optoLog.remove,file="optoLogRemove.csv",row.names=F)
 write.csv(analyze,file="analyze.csv",row.names=F)
 write.csv(analyze.remove,file="analyzeremove.csv",row.names=F)

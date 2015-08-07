@@ -78,6 +78,9 @@ optoLog$V1<<-as.numeric(optoLog$V1)
 
 optoLog.remove<<-optoLog[optoLog$V1 >= 61 & optoLog$V1 <= 63 | optoLog$V1 >= 9000 &  optoLog$V1 <= 9600,]
 optoLog.remove<<-optoLog[optoLog$V1 >= 61 & optoLog$V1 <= 63 ,]
+
+print(optoLog[optoLog$V1 >=10 & optoLog$V1 <=14,])
+optoLog.trial<<-optoLog[optoLog$V1 >=10 & optoLog$V1 <=14 | optoLog$V1 >=8000& optoLog$V1 <=9600,]
 }
 
 interpolate=function(N,S,M){
@@ -358,8 +361,7 @@ analyze<<-analyze
 
 conditions=function(){
   #reports the condiitions
-  print(optoLog[optoLog$V1 >=10 & optoLog$V1 <=14,])
-  x=length(analyze$optotrak.pulse.number)
+    x=length(analyze$optotrak.pulse.number)
   vision=c(rep("?",x))
   hand=c(rep("?",x))
   blocksize=c(rep("?",x))
@@ -498,8 +500,8 @@ bad.remove=function(bad){
     abc.v1.low[i]<<-z[1]
   }
   
-  m.gap=40 # the number of frames after the cutoff at which you avg the distance between the thumb and index to determine cube size
-  dis.con=c(rep(0,N)) #placeholder
+  m.gap<<-40 # the number of frames after the cutoff at which you avg the distance between the thumb and index to determine cube size
+  dis.con<<-c(rep(0,N)) #placeholder
   for(i in 1:N){
     d=analyze.remove[analyze.remove$optotrak.pulse.number==kept.list[i],]
     d=d$d.index.thumb[d$Hz >= abc.v1.low[i] & d$Hz <= abc.v1.low[i]+m.gap]
