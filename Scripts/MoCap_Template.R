@@ -1,5 +1,5 @@
 #Entry Required: enter the partiicpant number with quotation marks "03_31" or "03_45", etc.
-participant="03_12"
+participant="03_35"
 #----Packages Required (No Entry Required)----
 library(zoo,psych)
 
@@ -55,7 +55,7 @@ for(i in 2:N){
   cut=rbind(cut,x)
 }
 
-for(i in rev(1:99)){
+for(i in rev(99:106)){
   graphs.full(num=kept.list[i],x=i,optoLog=F)
 }
 
